@@ -166,22 +166,16 @@
     <!-- PROTÓTIPO 03: EDITORIAL -->
     <main id="tab-experience" class="prototype-tab experience-white-bg font-tech transition-colors duration-300">
         <!-- BARRA DE SELEÇÃO DE TEMA DO PROTÓTIPO 03 -->
-        <section class="max-w-7xl mx-auto pt-6 px-6">
-            <div class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-800 bg-slate-900 text-white transition-colors duration-300" id="theme-toggle-bar">
-                <div class="flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-teal-400 animate-pulse" id="theme-indicator"></span>
-                    <span class="text-xs font-bold uppercase tracking-wider" id="theme-bar-label">Modo Editorial — Tema Escuro Ativo</span>
-                </div>
-                <div class="flex items-center gap-1 p-1 bg-black/30 rounded-xl border border-slate-800" id="theme-toggle-container">
-                    <button onclick="setProt3Theme('light')" id="btn-theme-light" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 text-slate-400 hover:text-white">
-                        <svg class="w-3.5 h-3.5"><use href="#icon-sun"/></svg>
-                        <span>Claro</span>
-                    </button>
-                    <button onclick="setProt3Theme('dark')" id="btn-theme-dark" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 bg-teal-600 text-white shadow-sm">
-                        <svg class="w-3.5 h-3.5"><use href="#icon-moon"/></svg>
-                        <span>Escuro</span>
-                    </button>
-                </div>
+        <section class="max-w-7xl mx-auto pt-6 px-6 flex justify-end">
+            <div class="flex items-center gap-1 p-1 bg-black/30 rounded-xl border border-slate-800" id="theme-toggle-container">
+                <button onclick="setProt3Theme('light')" id="btn-theme-light" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 text-slate-400 hover:text-white">
+                    <svg class="w-3.5 h-3.5"><use href="#icon-sun"/></svg>
+                    <span>Claro</span>
+                </button>
+                <button onclick="setProt3Theme('dark')" id="btn-theme-dark" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 bg-teal-600 text-white shadow-sm">
+                    <svg class="w-3.5 h-3.5"><use href="#icon-moon"/></svg>
+                    <span>Escuro</span>
+                </button>
             </div>
         </section>
 
@@ -467,19 +461,13 @@
             
             const btnLight = document.getElementById('btn-theme-light');
             const btnDark = document.getElementById('btn-theme-dark');
-            const toggleBar = document.getElementById('theme-toggle-bar');
-            const barLabel = document.getElementById('theme-bar-label');
 
             if (theme === 'dark') {
                 btnDark.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 bg-teal-600 text-white shadow-sm";
                 btnLight.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 text-slate-400 hover:text-white";
-                toggleBar.className = "flex items-center justify-between p-3.5 rounded-2xl border border-slate-800 bg-slate-900 text-white transition-colors duration-300";
-                barLabel.textContent = "Modo Editorial — Tema Escuro Ativo";
             } else {
                 btnLight.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 bg-emerald-800 text-white shadow-sm";
                 btnDark.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 text-emerald-800 hover:text-emerald-950";
-                toggleBar.className = "flex items-center justify-between p-3.5 rounded-2xl border border-emerald-200 bg-white text-emerald-950 transition-colors duration-300";
-                barLabel.textContent = "Modo Editorial — Tema Claro Ativo";
             }
 
             applyThemeStyles('experience');
