@@ -116,6 +116,7 @@
                         <option value="Ipiranga">Ipiranga</option>
                         <option value="Jardim Prudência">Jardim Prudência</option>
                         <option value="Bosque da Saúde">Bosque da Saúde</option>
+                        <option value="Morumbi">Morumbi</option>
                     </select>
 
                     <select id="filter-status" onchange="applyFilters()" class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-lg p-2.5 text-slate-800 dark:text-white font-medium focus:ring-2 focus:ring-teal-500 outline-none transition-colors">
@@ -178,15 +179,17 @@
                         <div>
                             <label class="block text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Empreendimento</label>
                             <select id="ag-prop" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl p-3 text-xs text-slate-900 dark:text-white outline-none focus:border-teal-500">
-                                <option>Altus</option>
-                                <option>Criare</option>
-                                <option>Eucalys</option>
-                                <option>Riserva</option>
-                                <option>Viccino</option>
-                                <option>Vila Ares</option>
-                                <option>Signatur</option>
-                                <option>Isla</option>
-                                <option>Origem</option>
+                                <option>Altus Vila Mariana</option>
+                                <option>Criare Vila Mariana</option>
+                                <option>Eucalys — Torre 1</option>
+                                <option>Eucalys — Torre 2</option>
+                                <option>Riserva — Torre 1</option>
+                                <option>Riserva — Torre 2</option>
+                                <option>Viccino Saúde</option>
+                                <option>Vila Ares Vila Mariana</option>
+                                <option>Signature Ipiranga</option>
+                                <option>Isla Morumbi</option>
+                                <option>Origem Bosque da Saúde</option>
                             </select>
                         </div>
                         <div>
@@ -323,248 +326,255 @@
     </div>
 
     <script>
-        // LISTA ATUALIZADA DE EMPREENDIMENTOS REAIS DA TARJAB
+        // Mapeamento opcional de itens de lazer para posições específicas de fotos
         const MOCK_PROPERTIES = [
-        { 
-    id: 'prop-altus', 
-    title: 'Altus', 
-    location: 'Vila Mariana', 
-    bedrooms: '2 e 3 dorms (1 suíte)', 
-    bedroomsNum: [2, 3], 
-    area: '64m² a 88m²', 
-    price: "Sob Consulta", 
-    vagas: '1 ou 2 vagas', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL', 
-    images: [
-        'https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL',
-        'https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y',
-        'https://lh3.googleusercontent.com/d/15BsG8WcfvcnEPOhrdWyHGrq89Kd86O_Q',
-        'https://lh3.googleusercontent.com/d/109ZtLRE4rP9Z5EZFqy_8tIC-XLj8Escw',
-        'https://lh3.googleusercontent.com/d/1U6k2r0J9-sOXE2wV7doRvT-FHcOmtKCT',
-        'https://lh3.googleusercontent.com/d/10q9dqvoAchTP7xSJwaj2EZJuLRLCZbc9',
-        'https://lh3.googleusercontent.com/d/14lWzZgOAcaHghMjVaGM8AtuK4-5XXJy4',
-        'https://lh3.googleusercontent.com/d/1Ppz_uvwYZfvr3BYK_EIHsLm0DWZ1s2c5',
-        'https://lh3.googleusercontent.com/d/15wlwlUQibUJpGylok2NCcUk6k61AauHd',
-        'https://lh3.googleusercontent.com/d/1tzd2-uGfM6AlF5RraWYKQ5Ighiotv6YU',
-        'https://lh3.googleusercontent.com/d/1vddLC5yObCZiat33PQeilZhe42naV3Qx',
-        'https://lh3.googleusercontent.com/d/1RB5m-m6uPKhXVEUoOZcklNK3Mb2G-_iP',
-        'https://lh3.googleusercontent.com/d/1Et1L2lhFWH-PNlC-TWuWswwNFO9nAShE',
-        'https://lh3.googleusercontent.com/d/13BgOTRoCVkccZMuSHuSEX6sDWD6XDSUE',
-        'https://lh3.googleusercontent.com/d/1Qgs0zS1X4YH7iQxkAT8k9ycoi8ltaHzc',
-        'https://lh3.googleusercontent.com/d/1JzjIwd26g3V1KK8n39oK5d9VCHMqEkoS'
-    ],
-    plantas: [
-        { title: 'Planta Tipo 64m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' },
-        { title: 'Planta Tipo 88m² — 3 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80' }
-    ],
-    desc: 'Design moderno e arquitetura elevada no coração da Vila Mariana. A poucos passos do metrô.', 
-    lazer: ['Piscina no Rooftop', 'Fitness Center', 'Coworking', 'Salão de Festas', 'Pet Place'] 
-},
             { 
-    id: 'prop-criare', 
-    title: 'Criare', 
-    location: 'Vila Mariana', 
-    bedrooms: '1, 2 e 3 dorms', 
-    bedroomsNum: [1, 2, 3], 
-    area: '38m² a 78m²', 
-    price: "Sob Consulta", 
-    vagas: '1 vaga', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/1nE78dgVuPWeIMeFAfpz5iEBmhdh7RA1H', 
-    images: [
-        'https://lh3.googleusercontent.com/d/1nE78dgVuPWeIMeFAfpz5iEBmhdh7RA1H', // Fachada
-        'https://lh3.googleusercontent.com/d/1Dtg4ID41XqYE_jAR3TXIpQXK-vcH2Omm',
-        'https://lh3.googleusercontent.com/d/1KSp5k6uyLDwduv11t8sFkGyOz4jO49BI',
-        'https://lh3.googleusercontent.com/d/1QWGGoj1lgCc85CNC-LFWDWdToA1cs5GV',
-        'https://lh3.googleusercontent.com/d/1g83pQ6_5HusRxBRGp-9M2FMhvwOikiUf',
-        'https://lh3.googleusercontent.com/d/1X_FXVMC5TZsl53fRxfs-WY2TxW1nFKL_',
-        'https://lh3.googleusercontent.com/d/1lPQVJ3xYUAufX0NGaJqCkD-vKTwOq9E2',
-        'https://lh3.googleusercontent.com/d/1YwJ5TRBAH6ZCiJ9eh_PTGKVC-17ojbLY',
-        'https://lh3.googleusercontent.com/d/1bPH6bbZeTeSSWucBUFJbnCQE6VeQ7Usg',
-        'https://lh3.googleusercontent.com/d/1ui37Oa8J2vKV6GCC0AxeMqFdS_BULUjg',
-        'https://lh3.googleusercontent.com/d/1O5np08Q4U3UXmh3-g9uFxtQRsgRM02Zn',
-        'https://lh3.googleusercontent.com/d/15aP1-0z4WBQguMznVSH1qOezuQgff8IV',
-        'https://lh3.googleusercontent.com/d/13bj1lDAVMBp-UGE40UB64YyWtXcQSP9v',
-        'https://lh3.googleusercontent.com/d/1jy-VhiBXRBId8d5WSajJOeUyofBPYJUm',
-        'https://lh3.googleusercontent.com/d/13FzQ0k4G3AXRkvl5JeoOp2nYTR-lZ31n',
-        'https://lh3.googleusercontent.com/d/1t0hI3C6_AxvToqxE0ymuoHDT2rpp4dot',
-        'https://lh3.googleusercontent.com/d/12hBGIzApm33z3cPI8zJSnij0KFTlgrrT',
-        'https://lh3.googleusercontent.com/d/1UzTU2--oSGTKS_OC60KQ3XmHnGqdCdzh',
-        'https://lh3.googleusercontent.com/d/1os3agrb3jQO4uV9RCFIzjpvVscwyJBgy'
-    ],
-    plantas: [],
-    desc: 'Projeto moderno e funcional pensado para o seu bem-estar e praticidade no dia a dia.', 
-    lazer: ['Piscina', 'Fitness', 'Brinquedoteca', 'Salão de Festas', 'Espaço Gourmet', 'Coworking'] 
-},
+                id: 'prop-altus', 
+                title: 'Altus Vila Mariana', 
+                location: 'Vila Mariana', 
+                bedrooms: '2 e 3 dorms (1 suíte)', 
+                bedroomsNum: [2, 3], 
+                area: '64m² a 88m²', 
+                price: "Sob Consulta", 
+                vagas: '1 ou 2 vagas', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL',
+                    'https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y',
+                    'https://lh3.googleusercontent.com/d/15BsG8WcfvcnEPOhrdWyHGrq89Kd86O_Q',
+                    'https://lh3.googleusercontent.com/d/109ZtLRE4rP9Z5EZFqy_8tIC-XLj8Escw',
+                    'https://lh3.googleusercontent.com/d/1U6k2r0J9-sOXE2wV7doRvT-FHcOmtKCT',
+                    'https://lh3.googleusercontent.com/d/10q9dqvoAchTP7xSJwaj2EZJuLRLCZbc9',
+                    'https://lh3.googleusercontent.com/d/14lWzZgOAcaHghMjVaGM8AtuK4-5XXJy4',
+                    'https://lh3.googleusercontent.com/d/1Ppz_uvwYZfvr3BYK_EIHsLm0DWZ1s2c5',
+                    'https://lh3.googleusercontent.com/d/15wlwlUQibUJpGylok2NCcUk6k61AauHd',
+                    'https://lh3.googleusercontent.com/d/1tzd2-uGfM6AlF5RraWYKQ5Ighiotv6YU',
+                    'https://lh3.googleusercontent.com/d/1vddLC5yObCZiat33PQeilZhe42naV3Qx',
+                    'https://lh3.googleusercontent.com/d/1RB5m-m6uPKhXVEUoOZcklNK3Mb2G-_iP',
+                    'https://lh3.googleusercontent.com/d/1Et1L2lhFWH-PNlC-TWuWswwNFO9nAShE',
+                    'https://lh3.googleusercontent.com/d/13BgOTRoCVkccZMuSHuSEX6sDWD6XDSUE',
+                    'https://lh3.googleusercontent.com/d/1Qgs0zS1X4YH7iQxkAT8k9ycoi8ltaHzc',
+                    'https://lh3.googleusercontent.com/d/1JzjIwd26g3V1KK8n39oK5d9VCHMqEkoS'
+                ],
+                lazerMap: {
+                    'Piscina no Rooftop': 1,
+                    'Fitness Center': 2,
+                    'Coworking': 3,
+                    'Salão de Festas': 4,
+                    'Pet Place': 5,
+                    'Espaço Gourmet': 6
+                },
+                plantas: [
+                    { title: 'Planta Tipo 64m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' },
+                    { title: 'Planta Tipo 88m² — 3 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Design moderno e arquitetura elevada no coração da Vila Mariana. A poucos passos do metrô e perto de parques e universidades renomadas.', 
+                lazer: ['Piscina no Rooftop', 'Fitness Center', 'Coworking', 'Salão de Festas', 'Pet Place', 'Espaço Gourmet'] 
+            },
             { 
-    id: 'prop-eucalys-torre1', 
-    title: 'Eucalys — Torre 1', 
-    location: 'São Paulo', 
-    bedrooms: '2 e 3 dorms', 
-    bedroomsNum: [2, 3], 
-    area: 'A definir', 
-    price: "Sob Consulta", 
-    vagas: '1 vaga', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/14cvXLzag41NfjCx-16beQbdTCeQ04tL3', 
-    images: [
-        // Fachadas
-        'https://lh3.googleusercontent.com/d/14cvXLzag41NfjCx-16beQbdTCeQ04tL3',
-        'https://lh3.googleusercontent.com/d/1nm5UFzw9hf0J5jLlPy9CVfzAJqnp-cpP',
-        'https://lh3.googleusercontent.com/d/1Pbu9YGDuaZG7-w0UTs4CzsXLH_NKCfXg',
-        // Áreas Comuns
-        'https://lh3.googleusercontent.com/d/1jjTq2T0I7rl686cmda6WGfJtQxm1YmR9',
-        'https://lh3.googleusercontent.com/d/16sEbPo_zCRUOiYX0pj1c3sairTzg0v6R',
-        'https://lh3.googleusercontent.com/d/117Vh-06_lfALYgT6PFnjMYaKj5gZgUmM',
-        'https://lh3.googleusercontent.com/d/1bxy4Rnu1FgYHKdIFvIRGZpiVR4G-iGas',
-        'https://lh3.googleusercontent.com/d/1s5XKhNP0aQs_cCeazYTGoPOPILJCr34w',
-        'https://lh3.googleusercontent.com/d/1aOfhUTTJM0bDgb1iiNF0xmCjG5IsNziI',
-        'https://lh3.googleusercontent.com/d/1htLr94whuudmnHKaQKKJ0SHFjBPxBkOF',
-        'https://lh3.googleusercontent.com/d/1MOlyUJuKs_veCOVuzrv6j947TpthhlSL',
-        'https://lh3.googleusercontent.com/d/1XkBo_mfGI3jVnc8HgRZZ7FPvRwEuVTyL',
-        'https://lh3.googleusercontent.com/d/1-Z-Z52ghED3aL9yewR8EN-j76GdRECq-',
-        'https://lh3.googleusercontent.com/d/1grbtiGJBAtDnEND0afPuO9vEP66zIBAe',
-        'https://lh3.googleusercontent.com/d/1VWv03gdfaiFROpzVlPcPRfep6NmSesDG',
-        'https://lh3.googleusercontent.com/d/1wsMlxp8guyGwEsjQEtENtekQFgePGXb8',
-        'https://lh3.googleusercontent.com/d/1vflgdN8WaaYxHYeMe-hhAj8leOO3LpQ5'
-    ],
-    plantas: [],
-    desc: 'Projeto sofisticado que une arquitetura moderna e amplas opções de lazer na Torre 1.', 
-    lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Brinquedoteca', 'Espaço Gourmet'] 
-},
-
-{ 
-    id: 'prop-eucalys-torre2', 
-    title: 'Eucalys — Torre 2', 
-    location: 'São Paulo', 
-    bedrooms: '1 e 2 dorms', 
-    bedroomsNum: [1, 2], 
-    area: 'A definir', 
-    price: "Sob Consulta", 
-    vagas: '1 vaga', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/1_zsc7RB9Q3lukwOkESnVboCeK56fwN6o', 
-    images: [
-        // Fachada
-        'https://lh3.googleusercontent.com/d/1_zsc7RB9Q3lukwOkESnVboCeK56fwN6o',
-        // Áreas Comuns
-        'https://lh3.googleusercontent.com/d/1hO494OaohNSuwIgVHS4yEV9zDu5kE4AR',
-        'https://lh3.googleusercontent.com/d/1-n7XzWBJqVAhfYO8WTsbTC-kOKt53jGd',
-        'https://lh3.googleusercontent.com/d/17S-a6h-PJoGByBBypyiSzNzPV6OaXHof'
-    ],
-    plantas: [],
-    desc: 'Design contemporâneo e estrutura integrada com áreas de convivência exclusivas na Torre 2.', 
-    lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet'] 
-},
-            // RISERVA - TORRE 1
-{ 
-    id: 'prop-riserva-torre1', 
-    title: 'Riserva — Torre 1', 
-    location: 'São Paulo', 
-    bedrooms: '2 e 3 dorms', 
-    bedroomsNum: [2, 3], 
-    area: 'A definir', 
-    price: "Sob Consulta", 
-    vagas: '1 ou 2 vagas', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/1y03BZ3XdmYacCh_HpbJQ-ArB2pYupuTX', 
-    images: [
-        // Fachadas
-        'https://lh3.googleusercontent.com/d/1y03BZ3XdmYacCh_HpbJQ-ArB2pYupuTX',
-        'https://lh3.googleusercontent.com/d/1cIPPU5Cb4BQ1ha3FQTyxT7LydHNKOK8Q',
-        // Áreas Comuns
-        'https://lh3.googleusercontent.com/d/1osDjoDGCVy6Hw-1wdUt2ifbHFhgehtIo',
-        'https://lh3.googleusercontent.com/d/11pzbvpwvmDK3mC4tleK5nrfhPPhRedTt',
-        'https://lh3.googleusercontent.com/d/1xehifVKx1EGWX7Tiq7vDEXe4qMcdErJZ',
-        'https://lh3.googleusercontent.com/d/1phZrqGsRAg1lvYTYXCBRlRIKsmW_vx4-',
-        'https://lh3.googleusercontent.com/d/1C3xpgOTsfTHgYTTTBY2V0_sGz6A1LyYS',
-        'https://lh3.googleusercontent.com/d/1T9pQGMo7t4YRvMh7wpe84uHQA0nEHdkB',
-        'https://lh3.googleusercontent.com/d/1NovEsC20VKNcycjQukxwr3p06r03T-rP',
-        'https://lh3.googleusercontent.com/d/1D2sCOa77LWmMf2ECz0lmUVWBsNOBkYzY',
-        'https://lh3.googleusercontent.com/d/125Q8UQnZQI0TpB7CNqFWPNpHIOQuoSGR',
-        'https://lh3.googleusercontent.com/d/1xUT4SSBpSiNnC0F-t3TjYZKffQXJM6Uu',
-        'https://lh3.googleusercontent.com/d/1JNuI-8KUwd8RFMiFSI0QqH4NHd9KCcRL',
-        'https://lh3.googleusercontent.com/d/1CTA7fwNXFDb-9_pqBLs1k9tQFojSsDrX',
-        'https://lh3.googleusercontent.com/d/1IHMpCec5mtRBox3s9hwA0fuClvmQZ3oI'
-    ],
-    plantas: [],
-    desc: 'Sofisticação e conforto em um projeto exclusivo na Torre 1 do Riserva.', 
-    lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Espaço Gourmet', 'Brinquedoteca'] 
-},
-
-// RISERVA - TORRE 2
-{ 
-    id: 'prop-riserva-torre2', 
-    title: 'Riserva — Torre 2', 
-    location: 'São Paulo', 
-    bedrooms: '1 e 2 dorms', 
-    bedroomsNum: [1, 2], 
-    area: 'A definir', 
-    price: "Sob Consulta", 
-    vagas: '1 vaga', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/169XSQfvCU8WdO17qLrnuUl4IH8w9j03s', 
-    images: [
-        // Fachada
-        'https://lh3.googleusercontent.com/d/169XSQfvCU8WdO17qLrnuUl4IH8w9j03s',
-        // Áreas Comuns
-        'https://lh3.googleusercontent.com/d/1UgOGQVYuKWyxRjcC6YnmluuIsMpx7d6g',
-        'https://lh3.googleusercontent.com/d/1CrVWX_T1XpqaMMvOXk05b5GOaET2JgZm',
-        'https://lh3.googleusercontent.com/d/1SwySXQFPscvlYFaxni_HuhVjlmwTvVtb',
-        'https://lh3.googleusercontent.com/d/1liqFHvcBGET-cQdhNqXkVuzNIOiq1TDA',
-        'https://lh3.googleusercontent.com/d/1qdIe529dgongM87yQn162ok-FoEN59wX',
-        'https://lh3.googleusercontent.com/d/1_Uirs2mHmb-vnyNfrHvahys0itg66cJM',
-        'https://lh3.googleusercontent.com/d/1WLQ7gVYcygHjR_9w06y57b1QNHsOodCO',
-        'https://lh3.googleusercontent.com/d/11LpJuLXJdZIvJBYYmJ2u3SUicRGCVwp8',
-        'https://lh3.googleusercontent.com/d/1-68BYmgcYHiNSOOm8767uz9G-Ml9-NF4',
-        'https://lh3.googleusercontent.com/d/1Lydu4_I4C7I2D-TJn6elggcNIHFWeyOU'
-    ],
-    plantas: [],
-    desc: 'Design moderno com infraestrutura completa de lazer e convivência na Torre 2 do Riserva.', 
-    lazer: ['Piscina', 'Fitness Center', 'Coworking', 'Salão de Festas', 'Espaço Gourmet'] 
-},
+                id: 'prop-criare', 
+                title: 'Criare Vila Mariana', 
+                location: 'Vila Mariana', 
+                bedrooms: '1, 2 e 3 dorms', 
+                bedroomsNum: [1, 2, 3], 
+                area: '38m² a 78m²', 
+                price: "Sob Consulta", 
+                vagas: '1 vaga', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/1nE78dgVuPWeIMeFAfpz5iEBmhdh7RA1H', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/1nE78dgVuPWeIMeFAfpz5iEBmhdh7RA1H',
+                    'https://lh3.googleusercontent.com/d/1Dtg4ID41XqYE_jAR3TXIpQXK-vcH2Omm',
+                    'https://lh3.googleusercontent.com/d/1KSp5k6uyLDwduv11t8sFkGyOz4jO49BI',
+                    'https://lh3.googleusercontent.com/d/1QWGGoj1lgCc85CNC-LFWDWdToA1cs5GV',
+                    'https://lh3.googleusercontent.com/d/1g83pQ6_5HusRxBRGp-9M2FMhvwOikiUf',
+                    'https://lh3.googleusercontent.com/d/1X_FXVMC5TZsl53fRxfs-WY2TxW1nFKL_',
+                    'https://lh3.googleusercontent.com/d/1lPQVJ3xYUAufX0NGaJqCkD-vKTwOq9E2',
+                    'https://lh3.googleusercontent.com/d/1YwJ5TRBAH6ZCiJ9eh_PTGKVC-17ojbLY',
+                    'https://lh3.googleusercontent.com/d/1bPH6bbZeTeSSWucBUFJbnCQE6VeQ7Usg',
+                    'https://lh3.googleusercontent.com/d/1ui37Oa8J2vKV6GCC0AxeMqFdS_BULUjg',
+                    'https://lh3.googleusercontent.com/d/1O5np08Q4U3UXmh3-g9uFxtQRsgRM02Zn',
+                    'https://lh3.googleusercontent.com/d/15aP1-0z4WBQguMznVSH1qOezuQgff8IV',
+                    'https://lh3.googleusercontent.com/d/13bj1lDAVMBp-UGE40UB64YyWtXcQSP9v',
+                    'https://lh3.googleusercontent.com/d/1jy-VhiBXRBId8d5WSajJOeUyofBPYJUm',
+                    'https://lh3.googleusercontent.com/d/13FzQ0k4G3AXRkvl5JeoOp2nYTR-lZ31n',
+                    'https://lh3.googleusercontent.com/d/1t0hI3C6_AxvToqxE0ymuoHDT2rpp4dot',
+                    'https://lh3.googleusercontent.com/d/12hBGIzApm33z3cPI8zJSnij0KFTlgrrT',
+                    'https://lh3.googleusercontent.com/d/1UzTU2--oSGTKS_OC60KQ3XmHnGqdCdzh',
+                    'https://lh3.googleusercontent.com/d/1os3agrb3jQO4uV9RCFIzjpvVscwyJBgy'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 38m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' },
+                    { title: 'Planta Tipo 78m² — 3 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Projeto moderno e funcional pensado para o seu bem-estar e praticidade no dia a dia com planta versátil e excelente insolação.', 
+                lazer: ['Piscina', 'Fitness', 'Brinquedoteca', 'Salão de Festas', 'Espaço Gourmet', 'Coworking'] 
+            },
             { 
-    id: 'prop-viccino', 
-    title: 'Viccino', 
-    location: 'São Paulo', 
-    bedrooms: '2 e 3 dorms', 
-    bedroomsNum: [2, 3], 
-    area: 'A definir', 
-    price: "Sob Consulta", 
-    vagas: '1 vaga', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/11ki6nkuYX36I-BAVo9-5Mw2qxLvETJLc', 
-    images: [
-        // Fachadas
-        'https://lh3.googleusercontent.com/d/11ki6nkuYX36I-BAVo9-5Mw2qxLvETJLc',
-        'https://lh3.googleusercontent.com/d/1Y4Bv3rBgrMIohRyIgmyRV5f3ibNAWJUS',
-        'https://lh3.googleusercontent.com/d/1uRTNot6SryWP3jfX7HaYFtwu7OQXQEQ-',
-        // Áreas Comuns
-        'https://lh3.googleusercontent.com/d/1H_XAIi0FRZANIlqLwvZPc99XKZMhaOSL',
-        'https://lh3.googleusercontent.com/d/1yYEDP1yIET6ir-F-VjlY8I6DYgtJGIqX',
-        'https://lh3.googleusercontent.com/d/1KjmPF6x9xb5Of-RPztYFsuJQmuwpQhNe',
-        'https://lh3.googleusercontent.com/d/1xN4G-_ooa2dESL0V0WmekxSmELZT5SJo',
-        'https://lh3.googleusercontent.com/d/1rDCJAcEk9BgxzNXooLt7dR2Aq6YV7Jwr',
-        'https://lh3.googleusercontent.com/d/11ETZ7CUsO3xxlquc1gyc0m_Af0KNyEXA',
-        'https://lh3.googleusercontent.com/d/1vOUpNoDwqamTTwvnMIif7LqxfiwpHa_u',
-        'https://lh3.googleusercontent.com/d/1O6-dv9R1r8S17lVRY1tgK2UpxHeg3EM8',
-        'https://lh3.googleusercontent.com/d/1wzgbybxUgCgMurqQF25GdTAC_dsU-gJM',
-        'https://lh3.googleusercontent.com/d/13c6IlIHcEb4a76BdSr0LjsAUhbapPtIb',
-        'https://lh3.googleusercontent.com/d/1Th7ItATS84wD9z3ElA9YGZvDqlKlXdIu',
-        'https://lh3.googleusercontent.com/d/1rdZ8br-_5cA--2N4REE-9vGe4sGmdiIk',
-        'https://lh3.googleusercontent.com/d/17_PCiqXkh3GlAfAG9O3esFZPaynWupeO',
-        'https://lh3.googleusercontent.com/d/1E8etcQiVUMkNL_anow3SD_YM5rWNJK5f',
-        'https://lh3.googleusercontent.com/d/1fn8Kdzkc8g0Abd0EEvVGgoVnqG-thCVX',
-        'https://lh3.googleusercontent.com/d/1DE4hU3dy5pN8bwCIF5F3C2uyrzfDLAab'
-    ],
-    plantas: [],
-    desc: 'Arquitetura moderna e estrutura completa de lazer para garantir conforto e praticidade no seu dia a dia no Viccino.', 
-    lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Brinquedoteca', 'Coworking'] 
-},
+                id: 'prop-eucalys-torre1', 
+                title: 'Eucalys — Torre 1', 
+                location: 'Jardim Prudência', 
+                bedrooms: '2 e 3 dorms', 
+                bedroomsNum: [2, 3], 
+                area: '62m² a 85m²', 
+                price: "Sob Consulta", 
+                vagas: '1 vaga', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/14cvXLzag41NfjCx-16beQbdTCeQ04tL3', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/14cvXLzag41NfjCx-16beQbdTCeQ04tL3',
+                    'https://lh3.googleusercontent.com/d/1nm5UFzw9hf0J5jLlPy9CVfzAJqnp-cpP',
+                    'https://lh3.googleusercontent.com/d/1Pbu9YGDuaZG7-w0UTs4CzsXLH_NKCfXg',
+                    'https://lh3.googleusercontent.com/d/1jjTq2T0I7rl686cmda6WGfJtQxm1YmR9',
+                    'https://lh3.googleusercontent.com/d/16sEbPo_zCRUOiYX0pj1c3sairTzg0v6R',
+                    'https://lh3.googleusercontent.com/d/117Vh-06_lfALYgT6PFnjMYaKj5gZgUmM',
+                    'https://lh3.googleusercontent.com/d/1bxy4Rnu1FgYHKdIFvIRGZpiVR4G-iGas',
+                    'https://lh3.googleusercontent.com/d/1s5XKhNP0aQs_cCeazYTGoPOPILJCr34w',
+                    'https://lh3.googleusercontent.com/d/1aOfhUTTJM0bDgb1iiNF0xmCjG5IsNziI',
+                    'https://lh3.googleusercontent.com/d/1htLr94whuudmnHKaQKKJ0SHFjBPxBkOF',
+                    'https://lh3.googleusercontent.com/d/1MOlyUJuKs_veCOVuzrv6j947TpthhlSL',
+                    'https://lh3.googleusercontent.com/d/1XkBo_mfGI3jVnc8HgRZZ7FPvRwEuVTyL',
+                    'https://lh3.googleusercontent.com/d/1-Z-Z52ghED3aL9yewR8EN-j76GdRECq-',
+                    'https://lh3.googleusercontent.com/d/1grbtiGJBAtDnEND0afPuO9vEP66zIBAe',
+                    'https://lh3.googleusercontent.com/d/1VWv03gdfaiFROpzVlPcPRfep6NmSesDG',
+                    'https://lh3.googleusercontent.com/d/1wsMlxp8guyGwEsjQEtENtekQFgePGXb8',
+                    'https://lh3.googleusercontent.com/d/1vflgdN8WaaYxHYeMe-hhAj8leOO3LpQ5'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 62m² — 2 Dorms', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Projeto sofisticado cercado de verde no Jardim Prudência, unindo arquitetura moderna e amplas opções de lazer na Torre 1.', 
+                lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Brinquedoteca', 'Espaço Gourmet', 'Pet Place'] 
+            },
+            { 
+                id: 'prop-eucalys-torre2', 
+                title: 'Eucalys — Torre 2', 
+                location: 'Jardim Prudência', 
+                bedrooms: '1 e 2 dorms', 
+                bedroomsNum: [1, 2], 
+                area: '36m² a 48m²', 
+                price: "Sob Consulta", 
+                vagas: '1 vaga', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/1_zsc7RB9Q3lukwOkESnVboCeK56fwN6o', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/1_zsc7RB9Q3lukwOkESnVboCeK56fwN6o',
+                    'https://lh3.googleusercontent.com/d/1hO494OaohNSuwIgVHS4yEV9zDu5kE4AR',
+                    'https://lh3.googleusercontent.com/d/1-n7XzWBJqVAhfYO8WTsbTC-kOKt53jGd',
+                    'https://lh3.googleusercontent.com/d/17S-a6h-PJoGByBBypyiSzNzPV6OaXHof'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 36m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Design contemporâneo e estrutura integrada com áreas de convivência exclusivas e plantas eficientes na Torre 2 do Eucalys.', 
+                lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Coworking'] 
+            },
+            { 
+                id: 'prop-riserva-torre1', 
+                title: 'Riserva — Torre 1', 
+                location: 'Moema', 
+                bedrooms: '2 e 3 dorms', 
+                bedroomsNum: [2, 3], 
+                area: '68m² a 92m²', 
+                price: "Sob Consulta", 
+                vagas: '1 ou 2 vagas', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/1y03BZ3XdmYacCh_HpbJQ-ArB2pYupuTX', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/1y03BZ3XdmYacCh_HpbJQ-ArB2pYupuTX',
+                    'https://lh3.googleusercontent.com/d/1cIPPU5Cb4BQ1ha3FQTyxT7LydHNKOK8Q',
+                    'https://lh3.googleusercontent.com/d/1osDjoDGCVy6Hw-1wdUt2ifbHFhgehtIo',
+                    'https://lh3.googleusercontent.com/d/11pzbvpwvmDK3mC4tleK5nrfhPPhRedTt',
+                    'https://lh3.googleusercontent.com/d/1xehifVKx1EGWX7Tiq7vDEXe4qMcdErJZ',
+                    'https://lh3.googleusercontent.com/d/1phZrqGsRAg1lvYTYXCBRlRIKsmW_vx4-',
+                    'https://lh3.googleusercontent.com/d/1C3xpgOTsfTHgYTTTBY2V0_sGz6A1LyYS',
+                    'https://lh3.googleusercontent.com/d/1T9pQGMo7t4YRvMh7wpe84uHQA0nEHdkB',
+                    'https://lh3.googleusercontent.com/d/1NovEsC20VKNcycjQukxwr3p06r03T-rP',
+                    'https://lh3.googleusercontent.com/d/1D2sCOa77LWmMf2ECz0lmUVWBsNOBkYzY',
+                    'https://lh3.googleusercontent.com/d/125Q8UQnZQI0TpB7CNqFWPNpHIOQuoSGR',
+                    'https://lh3.googleusercontent.com/d/1xUT4SSBpSiNnC0F-t3TjYZKffQXJM6Uu',
+                    'https://lh3.googleusercontent.com/d/1JNuI-8KUwd8RFMiFSI0QqH4NHd9KCcRL',
+                    'https://lh3.googleusercontent.com/d/1CTA7fwNXFDb-9_pqBLs1k9tQFojSsDrX',
+                    'https://lh3.googleusercontent.com/d/1IHMpCec5mtRBox3s9hwA0fuClvmQZ3oI'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 68m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Sofisticação e conforto em um projeto exclusivo com localização privileged na região de Moema na Torre 1.', 
+                lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Espaço Gourmet', 'Brinquedoteca', 'Spa'] 
+            },
+            { 
+                id: 'prop-riserva-torre2', 
+                title: 'Riserva — Torre 2', 
+                location: 'Moema', 
+                bedrooms: '1 e 2 dorms', 
+                bedroomsNum: [1, 2], 
+                area: '38m² a 54m²', 
+                price: "Sob Consulta", 
+                vagas: '1 vaga', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/169XSQfvCU8WdO17qLrnuUl4IH8w9j03s', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/169XSQfvCU8WdO17qLrnuUl4IH8w9j03s',
+                    'https://lh3.googleusercontent.com/d/1UgOGQVYuKWyxRjcC6YnmluuIsMpx7d6g',
+                    'https://lh3.googleusercontent.com/d/1CrVWX_T1XpqaMMvOXk05b5GOaET2JgZm',
+                    'https://lh3.googleusercontent.com/d/1SwySXQFPscvlYFaxni_HuhVjlmwTvVtb',
+                    'https://lh3.googleusercontent.com/d/1liqFHvcBGET-cQdhNqXkVuzNIOiq1TDA',
+                    'https://lh3.googleusercontent.com/d/1qdIe529dgongM87yQn162ok-FoEN59wX',
+                    'https://lh3.googleusercontent.com/d/1_Uirs2mHmb-vnyNfrHvahys0itg66cJM',
+                    'https://lh3.googleusercontent.com/d/1WLQ7gVYcygHjR_9w06y57b1QNHsOodCO',
+                    'https://lh3.googleusercontent.com/d/11LpJuLXJdZIvJBYYmJ2u3SUicRGCVwp8',
+                    'https://lh3.googleusercontent.com/d/1-68BYmgcYHiNSOOm8767uz9G-Ml9-NF4',
+                    'https://lh3.googleusercontent.com/d/1Lydu4_I4C7I2D-TJn6elggcNIHFWeyOU'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 38m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Design moderno com infraestrutura completa de lazer e convivência para um público moderno na Torre 2 do Riserva.', 
+                lazer: ['Piscina', 'Fitness Center', 'Coworking', 'Salão de Festas', 'Espaço Gourmet'] 
+            },
+            { 
+                id: 'prop-viccino', 
+                title: 'Viccino Saúde', 
+                location: 'Saúde', 
+                bedrooms: '2 e 3 dorms', 
+                bedroomsNum: [2, 3], 
+                area: '56m² a 76m²', 
+                price: "Sob Consulta", 
+                vagas: '1 vaga', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/11ki6nkuYX36I-BAVo9-5Mw2qxLvETJLc', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/11ki6nkuYX36I-BAVo9-5Mw2qxLvETJLc',
+                    'https://lh3.googleusercontent.com/d/1Y4Bv3rBgrMIohRyIgmyRV5f3ibNAWJUS',
+                    'https://lh3.googleusercontent.com/d/1uRTNot6SryWP3jfX7HaYFtwu7OQXQEQ-',
+                    'https://lh3.googleusercontent.com/d/1H_XAIi0FRZANIlqLwvZPc99XKZMhaOSL',
+                    'https://lh3.googleusercontent.com/d/1yYEDP1yIET6ir-F-VjlY8I6DYgtJGIqX',
+                    'https://lh3.googleusercontent.com/d/1KjmPF6x9xb5Of-RPztYFsuJQmuwpQhNe',
+                    'https://lh3.googleusercontent.com/d/1xN4G-_ooa2dESL0V0WmekxSmELZT5SJo',
+                    'https://lh3.googleusercontent.com/d/1rDCJAcEk9BgxzNXooLt7dR2Aq6YV7Jwr',
+                    'https://lh3.googleusercontent.com/d/11ETZ7CUsO3xxlquc1gyc0m_Af0KNyEXA',
+                    'https://lh3.googleusercontent.com/d/1vOUpNoDwqamTTwvnMIif7LqxfiwpHa_u',
+                    'https://lh3.googleusercontent.com/d/1O6-dv9R1r8S17lVRY1tgK2UpxHeg3EM8',
+                    'https://lh3.googleusercontent.com/d/1wzgbybxUgCgMurqQF25GdTAC_dsU-gJM',
+                    'https://lh3.googleusercontent.com/d/13c6IlIHcEb4a76BdSr0LjsAUhbapPtIb',
+                    'https://lh3.googleusercontent.com/d/1Th7ItATS84wD9z3ElA9YGZvDqlKlXdIu',
+                    'https://lh3.googleusercontent.com/d/1rdZ8br-_5cA--2N4REE-9vGe4sGmdiIk',
+                    'https://lh3.googleusercontent.com/d/17_PCiqXkh3GlAfAG9O3esFZPaynWupeO',
+                    'https://lh3.googleusercontent.com/d/1E8etcQiVUMkNL_anow3SD_YM5rWNJK5f',
+                    'https://lh3.googleusercontent.com/d/1fn8Kdzkc8g0Abd0EEvVGgoVnqG-thCVX',
+                    'https://lh3.googleusercontent.com/d/1DE4hU3dy5pN8bwCIF5F3C2uyrzfDLAab'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 56m² — 2 Dorms', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Arquitetura moderna e estrutura completa de lazer para garantir conforto e praticidade a poucos minutos da estação de metrô Saúde.', 
+                lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Brinquedoteca', 'Coworking'] 
+            },
             { 
                 id: 'prop-vila-ares', 
-                title: 'Vila Ares', 
+                title: 'Vila Ares Vila Mariana', 
                 location: 'Vila Mariana', 
                 bedrooms: '1 e 2 dorms', 
                 bedroomsNum: [1, 2], 
@@ -579,108 +589,104 @@
                 plantas: [
                     { title: 'Planta Tipo 42m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' }
                 ],
-                desc: 'Ares modernos em um dos bairros mais desejados de São Paulo. Ideal para morar ou investir.', 
+                desc: 'Ares modernos em um dos bairros mais desejados de São Paulo. Ideal para morar com sofisticação ou para alta rentabilidade em locação.', 
                 lazer: ['Rooftop Bar', 'Coworking com Salas Privativas', 'Fitness Center', 'Lavanderia'] 
             },
-            // SIGNATURE
-{ 
-    id: 'prop-signature', 
-    title: 'Signature', 
-    location: 'São Paulo', 
-    bedrooms: '2 e 3 dorms', 
-    bedroomsNum: [2, 3], 
-    area: 'A definir', 
-    price: "Sob Consulta", 
-    vagas: '1 ou 2 vagas', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/19al3-kBSfOcTgD_C6e9zCPkvhLHV0mlm', 
-    images: [
-        // Fachada
-        'https://lh3.googleusercontent.com/d/19al3-kBSfOcTgD_C6e9zCPkvhLHV0mlm',
-        // Áreas Comuns
-        'https://lh3.googleusercontent.com/d/1ovNg6zrXlM8ovVvQ8h5Ks8SwzpqLT6Yx',
-        'https://lh3.googleusercontent.com/d/1ftKHOTcL6BFgBmzz47JbxpaYEGcgau-T',
-        'https://lh3.googleusercontent.com/d/18kLP-QCo3NpxigX5q1N_PPkbCW4JJbkV',
-        'https://lh3.googleusercontent.com/d/12gYOfUl2czko9piDatXb7XNX4RxnjF9n',
-        'https://lh3.googleusercontent.com/d/1f7e5ijbQPwd0nCosxWc-PxAfJLsuInFL',
-        'https://lh3.googleusercontent.com/d/1nVGC1SzJ8N8rzxvazSQhjHLttTqk1BMB',
-        'https://lh3.googleusercontent.com/d/13rO73p3iM-snMnrG69Qfaonoe7O1yfVY',
-        'https://lh3.googleusercontent.com/d/1BVNMSPv-_pVMyWyS4pkeXm4GZWB694l5',
-        'https://lh3.googleusercontent.com/d/1FPZ0y0w1jwj9JVUYySaBMmr9EgOaGmZK',
-        'https://lh3.googleusercontent.com/d/1ps56kMiwggRv8flamx9GqGmnjbmDArfZ',
-        'https://lh3.googleusercontent.com/d/1vn-UyQ8giE6YnVRDqmyluYCO-AKFaBSn',
-        'https://lh3.googleusercontent.com/d/13leiR0Wcblw6yTaCLAksg7jnKuWO8gzx'
-    ],
-    plantas: [],
-    desc: 'Exclusividade e alto padrão em cada detalhe do Signature.', 
-    lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Coworking'] 
-},
-
-// ISLA MORUMBI
-{ 
-    id: 'prop-isla-morumbi', 
-    title: 'Isla Morumbi', 
-    location: 'Morumbi, São Paulo', 
-    bedrooms: '2 e 3 dorms', 
-    bedroomsNum: [2, 3], 
-    area: 'A definir', 
-    price: "Sob Consulta", 
-    vagas: '1 vaga', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/1SVm7eI_hRFendYLU5CNlTXGj3OXaFeSi', 
-    images: [
-        // Fachadas
-        'https://lh3.googleusercontent.com/d/1SVm7eI_hRFendYLU5CNlTXGj3OXaFeSi',
-        'https://lh3.googleusercontent.com/d/1bkkoJWkrQtbS1i55ClLp-06Coox_LLsB',
-        // Áreas Comuns
-        'https://lh3.googleusercontent.com/d/14xVFjrCHhWKuq4PUQ9tFrzFxvRazvgj6',
-        'https://lh3.googleusercontent.com/d/1GWt-9-uPvo9KsYfFX2-YXJSM21pJ7PVz',
-        'https://lh3.googleusercontent.com/d/1S5BLSIWN-RcFj4OLev_eR0xbCuq6_ZSQ',
-        'https://lh3.googleusercontent.com/d/1TqrD7GgkBLep9ujGRy5N8FeQgMiIT_R_',
-        'https://lh3.googleusercontent.com/d/1BZyvnyTa7Xvfyjt5dtd2cH8tvY_gfb16',
-        'https://lh3.googleusercontent.com/d/1jzc7IdMx8gLUUsqlwvBFol6EsmskSCap',
-        'https://lh3.googleusercontent.com/d/1Mm0egKwi5Sfzqd2DYIkNMWw55U-cgNhT'
-    ],
-    plantas: [],
-    desc: 'Um verdadeiro refúgio urbano no Morumbi com completa infraestrutura de lazer.', 
-    lazer: ['Piscina', 'Fitness Center', 'Brinquedoteca', 'Salão de Festas', 'Espaço Grill'] 
-},
-
-// ORIGEM
-{ 
-    id: 'prop-origem', 
-    title: 'Origem', 
-    location: 'São Paulo', 
-    bedrooms: '1, 2 e 3 dorms', 
-    bedroomsNum: [1, 2, 3], 
-    area: 'A definir', 
-    price: "Sob Consulta", 
-    vagas: '1 vaga', 
-    status: 'Lançamento', 
-    image: 'https://lh3.googleusercontent.com/d/1U4LqwBNlM_-A5kktFGqT_7jp7VYjOwBr', 
-    images: [
-        // Fachada
-        'https://lh3.googleusercontent.com/d/1U4LqwBNlM_-A5kktFGqT_7jp7VYjOwBr',
-        // Áreas Comuns
-        'https://lh3.googleusercontent.com/d/1jUZWzPKcRjt-FK8hZvbZU2-jhkDco7fQ',
-        'https://lh3.googleusercontent.com/d/1McuhqbO7qOVOvmOe98JZ9vxnn9lFXyr',
-        'https://lh3.googleusercontent.com/d/10EAgc_3WFvohpPQ-C5nLzbYLKmI79r9o',
-        'https://lh3.googleusercontent.com/d/1IHRwox_fmn4ORK08RY9imk1qH8W8p-ZU',
-        'https://lh3.googleusercontent.com/d/1hOGXahdN3EaC_tCQ3GCwuRBkxwUhOa9u',
-        'https://lh3.googleusercontent.com/d/18r-TJV_UxMSfqc2YSqVtXVmRmuK1VQYA',
-        'https://lh3.googleusercontent.com/d/1Z0eK3dR4cLfrhNgiJJeyCmisygdrcHOi',
-        'https://lh3.googleusercontent.com/d/1YFjDixd370_6BIxb0Xzz6wNgesaceF8T',
-        'https://lh3.googleusercontent.com/d/1ItenUu21gJ3r1KoBrsSZncVf9xoOaQ6T'
-    ],
-    plantas: [],
-    desc: 'Onde o bem-estar encontra a Praticidade. Projeto moderno pensado para o seu estilo de vida.', 
-    lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Espaço Gourmet', 'Coworking', 'Pet Place'] 
-}
+            { 
+                id: 'prop-signature', 
+                title: 'Signature Ipiranga', 
+                location: 'Ipiranga', 
+                bedrooms: '2 e 3 dorms', 
+                bedroomsNum: [2, 3], 
+                area: '67m² a 95m²', 
+                price: "Sob Consulta", 
+                vagas: '1 ou 2 vagas', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/19al3-kBSfOcTgD_C6e9zCPkvhLHV0mlm', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/19al3-kBSfOcTgD_C6e9zCPkvhLHV0mlm',
+                    'https://lh3.googleusercontent.com/d/1ovNg6zrXlM8ovVvQ8h5Ks8SwzpqLT6Yx',
+                    'https://lh3.googleusercontent.com/d/1ftKHOTcL6BFgBmzz47JbxpaYEGcgau-T',
+                    'https://lh3.googleusercontent.com/d/18kLP-QCo3NpxigX5q1N_PPkbCW4JJbkV',
+                    'https://lh3.googleusercontent.com/d/12gYOfUl2czko9piDatXb7XNX4RxnjF9n',
+                    'https://lh3.googleusercontent.com/d/1f7e5ijbQPwd0nCosxWc-PxAfJLsuInFL',
+                    'https://lh3.googleusercontent.com/d/1nVGC1SzJ8N8rzxvazSQhjHLttTqk1BMB',
+                    'https://lh3.googleusercontent.com/d/13rO73p3iM-snMnrG69Qfaonoe7O1yfVY',
+                    'https://lh3.googleusercontent.com/d/1BVNMSPv-_pVMyWyS4pkeXm4GZWB694l5',
+                    'https://lh3.googleusercontent.com/d/1FPZ0y0w1jwj9JVUYySaBMmr9EgOaGmZK',
+                    'https://lh3.googleusercontent.com/d/1ps56kMiwggRv8flamx9GqGmnjbmDArfZ',
+                    'https://lh3.googleusercontent.com/d/1vn-UyQ8giE6YnVRDqmyluYCO-AKFaBSn',
+                    'https://lh3.googleusercontent.com/d/13leiR0Wcblw6yTaCLAksg7jnKuWO8gzx'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 67m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Exclusividade e alto padrão em cada detalhe no Ipiranga, com acabamento refinado e planta pensada para momentos inesquecíveis.', 
+                lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Coworking'] 
+            },
+            { 
+                id: 'prop-isla-morumbi', 
+                title: 'Isla Morumbi', 
+                location: 'Morumbi', 
+                bedrooms: '2 e 3 dorms', 
+                bedroomsNum: [2, 3], 
+                area: '58m² a 82m²', 
+                price: "Sob Consulta", 
+                vagas: '1 vaga', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/1SVm7eI_hRFendYLU5CNlTXGj3OXaFeSi', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/1SVm7eI_hRFendYLU5CNlTXGj3OXaFeSi',
+                    'https://lh3.googleusercontent.com/d/1bkkoJWkrQtbS1i55ClLp-06Coox_LLsB',
+                    'https://lh3.googleusercontent.com/d/14xVFjrCHhWKuq4PUQ9tFrzFxvRazvgj6',
+                    'https://lh3.googleusercontent.com/d/1GWt-9-uPvo9KsYfFX2-YXJSM21pJ7PVz',
+                    'https://lh3.googleusercontent.com/d/1S5BLSIWN-RcFj4OLev_eR0xbCuq6_ZSQ',
+                    'https://lh3.googleusercontent.com/d/1TqrD7GgkBLep9ujGRy5N8FeQgMiIT_R_',
+                    'https://lh3.googleusercontent.com/d/1BZyvnyTa7Xvfyjt5dtd2cH8tvY_gfb16',
+                    'https://lh3.googleusercontent.com/d/1jzc7IdMx8gLUUsqlwvBFol6EsmskSCap',
+                    'https://lh3.googleusercontent.com/d/1Mm0egKwi5Sfzqd2DYIkNMWw55U-cgNhT'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 58m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Um verdadeiro refúgio urbano no Morumbi com área verde integrada e completa infraestrutura de lazer para toda a família.', 
+                lazer: ['Piscina', 'Fitness Center', 'Brinquedoteca', 'Salão de Festas', 'Espaço Grill'] 
+            },
+            { 
+                id: 'prop-origem', 
+                title: 'Origem Bosque da Saúde', 
+                location: 'Bosque da Saúde', 
+                bedrooms: '1, 2 e 3 dorms', 
+                bedroomsNum: [1, 2, 3], 
+                area: '40m² a 75m²', 
+                price: "Sob Consulta", 
+                vagas: '1 vaga', 
+                status: 'Lançamento', 
+                image: 'https://lh3.googleusercontent.com/d/1U4LqwBNlM_-A5kktFGqT_7jp7VYjOwBr', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/1U4LqwBNlM_-A5kktFGqT_7jp7VYjOwBr',
+                    'https://lh3.googleusercontent.com/d/1jUZWzPKcRjt-FK8hZvbZU2-jhkDco7fQ',
+                    'https://lh3.googleusercontent.com/d/1McuhqbO7qOVOvmOe98JZ9vxnn9lFXyr',
+                    'https://lh3.googleusercontent.com/d/10EAgc_3WFvohpPQ-C5nLzbYLKmI79r9o',
+                    'https://lh3.googleusercontent.com/d/1IHRwox_fmn4ORK08RY9imk1qH8W8p-ZU',
+                    'https://lh3.googleusercontent.com/d/1hOGXahdN3EaC_tCQ3GCwuRBkxwUhOa9u',
+                    'https://lh3.googleusercontent.com/d/18r-TJV_UxMSfqc2YSqVtXVmRmuK1VQYA',
+                    'https://lh3.googleusercontent.com/d/1Z0eK3dR4cLfrhNgiJJeyCmisygdrcHOi',
+                    'https://lh3.googleusercontent.com/d/1YFjDixd370_6BIxb0Xzz6wNgesaceF8T',
+                    'https://lh3.googleusercontent.com/d/1ItenUu21gJ3r1KoBrsSZncVf9xoOaQ6T'
+                ],
+                plantas: [
+                    { title: 'Planta Tipo 40m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' }
+                ],
+                desc: 'Onde o bem-estar encontra a praticidade. Projeto moderno pensado para o seu estilo de vida no Bosque da Saúde.', 
+                lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Espaço Gourmet', 'Coworking', 'Pet Place'] 
+            }
         ];
 
         let filteredProperties = [...MOCK_PROPERTIES];
         let currentCarouselImages = [];
         let currentCarouselIndex = 0;
+        let currentProperty = null;
 
         // FUNÇÃO DE TEMA (DARK / LIGHT MODE)
         function toggleTheme() {
@@ -749,6 +755,38 @@
             });
         }
 
+        // DIRECIONAR O CARROSSEL ATRAVÉS DO BOTÃO DE LAZER
+        function goToLazerSlide(itemLazer, itemIndex) {
+            if (!currentProperty) return;
+
+            // 1. Tenta usar o mapeamento customizado caso exista
+            if (currentProperty.lazerMap && currentProperty.lazerMap[itemLazer] !== undefined) {
+                const targetIdx = currentProperty.lazerMap[itemLazer];
+                if (targetIdx < currentCarouselImages.length) {
+                    goToSlide(targetIdx);
+                    scrollToCarousel();
+                    return;
+                }
+            }
+
+            // 2. Mapeamento dinâmico proporcional com base no índice da opção de lazer
+            if (currentCarouselImages.length > 1) {
+                const calculatedIndex = (itemIndex + 1) % currentCarouselImages.length;
+                goToSlide(calculatedIndex);
+            } else {
+                goToSlide(0);
+            }
+
+            scrollToCarousel();
+        }
+
+        function scrollToCarousel() {
+            const container = document.getElementById('carousel-container');
+            if (container) {
+                container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
         function selectPlanta(imgUrl, title) {
             const plantaImg = document.getElementById('planta-active-img');
             const plantaTitle = document.getElementById('planta-active-title');
@@ -760,6 +798,7 @@
             const p = MOCK_PROPERTIES.find(item => item.id === id);
             if (!p) return;
 
+            currentProperty = p;
             currentCarouselImages = p.images && p.images.length > 0 ? p.images : [p.image];
             currentCarouselIndex = 0;
 
@@ -775,7 +814,7 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
+                    <div id="carousel-container" class="space-y-2">
                         <div class="relative w-full h-64 overflow-hidden rounded-2xl shadow group">
                             <img id="carousel-active-img" src="${currentCarouselImages[0]}" class="w-full h-full object-cover transition-all duration-300">
                             
@@ -811,6 +850,23 @@
                     </div>
                 </div>
 
+
+                <!-- ITENS DE LAZER EM FORMATO DE BOTÕES CLICÁVEIS -->
+                <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xs font-bold uppercase text-slate-700 dark:text-slate-300">Itens de Lazer & Comodidades</h3>
+                        <span class="text-[10px] text-teal-600 dark:text-teal-400 font-medium">Clique no item para visualizar no carrossel</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        ${p.lazer.map((item, idx) => `
+                            <button onclick="goToLazerSlide('${item}', ${idx})" class="bg-slate-100 hover:bg-teal-600 hover:text-white dark:bg-slate-900 dark:hover:bg-teal-500 dark:hover:text-white text-teal-700 dark:text-teal-300 border-slate-300 dark:border-slate-700 border px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 flex items-center gap-1.5 shadow-sm active:scale-95">
+                                <span></span>
+                                <span>${item}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+
                 ${p.plantas && p.plantas.length > 0 ? `
                 <div class="border-t border-slate-200 dark:border-slate-800 pt-6 space-y-4">
                     <div class="flex items-center gap-2">
@@ -835,12 +891,7 @@
                 </div>
                 ` : ''}
 
-                <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-2">
-                    <h3 class="text-xs font-bold uppercase text-slate-700 dark:text-slate-300">Itens de Lazer & Comodidades</h3>
-                    <div class="flex flex-wrap gap-2">
-                        ${p.lazer.map(l => `<span class="bg-slate-100 dark:bg-slate-900 text-teal-700 dark:text-teal-300 border-slate-300 dark:border-slate-700 border px-3 py-1 rounded-full text-[11px] font-medium">${l}</span>`).join('')}
-                    </div>
-                </div>
+                
 
                 <div class="pt-2 flex">
                     <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Chris!%20Gostaria%20de%20saber%20mais%20sobre%20o%20${encodeURIComponent(p.title)}" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
@@ -924,7 +975,7 @@
                         </div>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
-                        Chris, sua consultora imobiliária VIP e credenciada Tarjab. Especialista nos empreendimentos Altus, Criare, Eucalys, Riserva, Viccino, Vila Ares, Signatur, Isla e Origem.
+                        Chris, sua consultora imobiliária VIP e credenciada Tarjab. Especialista nos empreendimentos Altus, Criare, Eucalys, Riserva, Viccino, Vila Ares, Signature, Isla e Origem.
                     </p>
                     <div class="flex items-center gap-2 pt-1">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -944,9 +995,9 @@
                     <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest">Lançamentos</h4>
                     <ul class="space-y-2 text-xs">
                         <li><a href="javascript:void(0)" onclick="openModal('prop-altus')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Altus — Vila Mariana</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('prop-riserva')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Riserva — Moema</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('prop-eucalys')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Eucalys — Jd. Prudência</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('prop-criare')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Criare — Saúde</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-riserva-torre1')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Riserva — Moema</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-eucalys-torre1')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Eucalys — Jd. Prudência</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-criare')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Criare — Vila Mariana</a></li>
                     </ul>
                 </div>
 
