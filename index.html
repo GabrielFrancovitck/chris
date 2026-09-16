@@ -3,7 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chris — Corretora Autorizada Tarjab</title>
+    <title>Chris — Consultora Autorizada Tarjab | Imóveis na Zona Sul e SP</title>
+    
+    <!-- SEO METATAGS -->
+    <meta name="description" content="Encontre apartamentos e lançamentos exclusivos da Tarjab em São Paulo. Atendimento personalizado com a consultora Chris (CRECI 250840-F).">
+    <meta name="keywords" content="Tarjab, imóveis SP, Nova Klabin, Praça da Árvore, Moema, Vila Clementino, Saúde, Morumbi, Ipiranga, Freguesia do Ó, Mirandópolis, apartamentos São Paulo, consultora Chris">
+    <meta name="author" content="Chris — Consultora Autorizada Tarjab">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b0f19">
+    
+    <!-- OPEN GRAPH / SOCIAL MEDIA SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chris — Consultora Autorizada Tarjab">
+    <meta property="og:description" content="Portfólio de imóveis e lançamentos exclusivos Tarjab em São Paulo. Agende sua visita diretamente com a Chris.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chris — Consultora Autorizada Tarjab">
+    <meta name="twitter:description" content="Lançamentos de apartamentos Tarjab na Nova Klabin, Praça da Árvore, Moema, Vila Clementino, Saúde, Morumbi, Ipiranga, Mirandópolis e Freguesia do Ó.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='none' stroke='%232dd4bf' stroke-width='6' stroke-linejoin='round' d='M10 80h80M20 80V55l10-8v33M33 80V38l14-11v53M51 80V12l16 11v57M71 80V35l11 8v37'/></svg>">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- SCHEMA.ORG / DADOS ESTRUTURADOS GOOGLE -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Chris — Consultora Autorizada Tarjab",
+      "image": "logo.png",
+      "telephone": "+55-11-91469-6009",
+      "email": "chris@chriscorvino.com.br",
+      "url": "https://www.chriscorvino.com.br",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "areaServed": ["Nova Klabin", "Praça da Árvore", "Moema", "Vila Clementino", "Saúde", "Morumbi", "Ipiranga", "Freguesia do Ó", "Mirandópolis"],
+      "priceRange": "$$$$"
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -15,19 +62,42 @@
         .font-serif { font-family: 'Playfair Display', serif; }
         .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-tech { font-family: 'Space Grotesk', sans-serif; }
+
+        /* ESTILIZAÇÃO CUSTOMIZADA DE SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 9999px;
+            border: 2px solid #0b0f19;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d9488;
+        }
+
+        /* OCULTAR SCROLLBAR EM CARROSÉIS HORIZONTAIS */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body id="main-body" class="bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 font-sans antialiased pb-20 transition-colors duration-300">
 
     <!-- SVG ICONS BANK -->
     <svg style="display: none;">
-        <symbol id="tarjab-logo" viewBox="0 0 250 50">
-            <path d="M 10,5 L 70,5 C 75,5 80,10 80,15 L 80,45" fill="none" stroke="#00685b" stroke-width="6" stroke-linecap="round"/>
-            <path d="M 80,45 L 20,45 C 15,45 10,40 10,35 L 10,5" fill="none" stroke="#00685b" stroke-width="6" stroke-linecap="round"/>
-            <text x="28" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="30" fill="#00685b">T</text>
-            <text x="95" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="32" fill="#00685b" letter-spacing="-1">Tarjab</text>
-        </symbol>
-
         <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
         </symbol>
@@ -71,24 +141,30 @@
         <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </symbol>
+
+        <symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </symbol>
     </svg>
 
     <!-- HEADER DE NAVEGAÇÃO -->
     <header id="main-header" class="sticky top-0 z-40 bg-white/90 dark:bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-md transition-colors">
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
             <div class="flex items-center gap-4">
-                <div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800">
-                    <svg class="w-28 h-7"><use href="#tarjab-logo"/></svg>
+                <div class="flex items-center justify-center">
+                    <img src="logo.png" alt="Chris Negócios Imobiliários" class="h-12 w-auto max-h-12 object-contain bg-transparent hidden dark:block">
+                    <img src="logo2.png" alt="Chris Negócios Imobiliários" class="h-12 w-auto max-h-12 object-contain bg-transparent block dark:hidden">
                 </div>
-                <div class="h-6 w-px bg-slate-300 dark:bg-slate-800 hidden sm:block"></div>
+                
+                <div class="h-8 w-px bg-slate-300 dark:bg-slate-800 hidden sm:block"></div>
+                
                 <div class="flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
-                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-300 font-tech">Chris • Corretora Autorizada</span>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-300 font-tech">Chris • Consultora Autorizada</span>
                 </div>
             </div>
             
             <div class="flex items-center gap-3">
-                <!-- BOTÃO DE ALTERNÂNCIA DE TEMA -->
                 <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-all" title="Alternar Tema Claro/Escuro">
                     <svg class="w-4 h-4 hidden dark:block"><use href="#icon-sun"/></svg>
                     <svg class="w-4 h-4 block dark:hidden"><use href="#icon-moon"/></svg>
@@ -110,13 +186,14 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full md:w-auto text-xs">
                     <select id="filter-neighborhood" onchange="applyFilters()" class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-lg p-2.5 text-slate-800 dark:text-white font-medium focus:ring-2 focus:ring-teal-500 outline-none transition-colors">
                         <option value="all">Todos os Bairros</option>
-                        <option value="Vila Mariana">Vila Mariana</option>
+                        <option value="Mirandópolis">Mirandópolis</option>
+                        <option value="Praça da Árvore">Praça da Árvore</option>
+                        <option value="Freguesia do Ó">Freguesia do Ó</option>
+                        <option value="Vila Clementino">Vila Clementino</option>
                         <option value="Moema">Moema</option>
                         <option value="Saúde">Saúde</option>
-                        <option value="Ipiranga">Ipiranga</option>
-                        <option value="Jardim Prudência">Jardim Prudência</option>
-                        <option value="Bosque da Saúde">Bosque da Saúde</option>
                         <option value="Morumbi">Morumbi</option>
+                        <option value="Ipiranga">Ipiranga</option>
                     </select>
 
                     <select id="filter-status" onchange="applyFilters()" class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-lg p-2.5 text-slate-800 dark:text-white font-medium focus:ring-2 focus:ring-teal-500 outline-none transition-colors">
@@ -144,17 +221,17 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-slate-200 dark:border-slate-800 pb-8">
                 <div>
                     <span class="text-xs font-tech font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider">Lançamentos & Oportunidades Reais Tarjab</span>
-                    <h1 class="text-3xl md:text-4xl font-extrabold font-tech text-slate-900 dark:text-white mt-1">Portfólio de Imóveis</h1>
-                    <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 font-tech">Conheça nossos empreendimentos exclusivos na zona sul de São Paulo.</p>
+                    <h1 class="text-3xl md:text-4xl font-extrabold font-tech text-slate-900 dark:text-white mt-1">Portfólio de Imóveis em SP</h1>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 font-tech">Conheça nossos empreendimentos exclusivos nos melhores bairros de São Paulo.</p>
                 </div>
                 <div class="flex gap-4 text-xs font-tech">
                     <div class="bg-white dark:bg-slate-900 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <span class="text-slate-500 dark:text-slate-400 block text-[10px]">Unidades Entregues</span>
-                        <strong class="text-teal-600 dark:text-teal-400 text-sm">40+ anos de tradição</strong>
+                        <span class="text-slate-500 dark:text-slate-400 block text-[10px]">Tradição Tarjab</span>
+                        <strong class="text-teal-600 dark:text-teal-400 text-sm font-bold">40 anos cuidando do seu lugar de viver.</strong>
                     </div>
                     <div class="bg-white dark:bg-slate-900 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <span class="text-slate-500 dark:text-slate-400 block text-[10px]">Atendimento VIP</span>
-                        <strong class="text-teal-600 dark:text-teal-400 text-sm">Direto com a Chris</strong>
+                        <span class="text-slate-500 dark:text-slate-400 block text-[10px]">Atendimento Exclusivo</span>
+                        <strong class="text-teal-600 dark:text-teal-400 text-sm font-bold">Direto com a Chris</strong>
                     </div>
                 </div>
             </div>
@@ -172,24 +249,24 @@
                 <div class="lg:col-span-5 space-y-4">
                     <span class="bg-slate-100 dark:bg-slate-950 text-teal-600 dark:text-teal-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full font-tech border border-slate-200 dark:border-slate-800">Atendimento Presencial</span>
                     <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white">AGENDE SUA VISITA</h2>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-tech">Escolha o empreendimento ideal e agende um horário com atendimento exclusivo da corretora Chris.</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-tech">Escolha o empreendimento ideal e agende um horário com atendimento exclusivo da consultora Chris.</p>
                 </div>
                 <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 p-6 md:p-8 rounded-2xl shadow-inner font-tech space-y-4 border border-slate-200 dark:border-slate-800">
                     <div class="grid sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Empreendimento</label>
                             <select id="ag-prop" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl p-3 text-xs text-slate-900 dark:text-white outline-none focus:border-teal-500">
-                                <option>Altus Vila Mariana</option>
-                                <option>Criare Vila Mariana</option>
-                                <option>Eucalys — Torre 1</option>
-                                <option>Eucalys — Torre 2</option>
-                                <option>Riserva — Torre 1</option>
-                                <option>Riserva — Torre 2</option>
-                                <option>Viccino Saúde</option>
-                                <option>Vila Ares Vila Mariana</option>
+                                <option>Altus Nova Klabin</option>
+                                <option>Criare Praça da Árvore</option>
+                                <option>Eucalys Lírio</option>
+                                <option>Eucalys Moema</option>
+                                <option>Riserva Bosque</option>
+                                <option>Riserva Horizonte</option>
+                                <option>Viccino Praça da Árvore</option>
+                                <option>Vila Ares</option>
                                 <option>Signature Ipiranga</option>
                                 <option>Isla Morumbi</option>
-                                <option>Origem Bosque da Saúde</option>
+                                <option>Origem Freguesia do Ó</option>
                             </select>
                         </div>
                         <div>
@@ -202,39 +279,28 @@
                         <label class="block text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1.5">Quanto você pretende investir?</label>
                         <div class="grid grid-cols-3 gap-2">
                             <label class="flex items-center justify-center p-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl cursor-pointer hover:border-teal-500 transition-all">
-                                <input type="radio" name="ag-investment" value="R$ 500 mil a R$ 800 mil" class="sr-only peer" checked>
-                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300 peer-checked:text-teal-600 dark:peer-checked:text-teal-400">Até R$ 800k</span>
+                                <input type="radio" name="ag-investment" value="Até 800k" class="sr-only peer" checked>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300 peer-checked:text-teal-600 dark:peer-checked:text-teal-400">Até 800k</span>
                             </label>
                             <label class="flex items-center justify-center p-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl cursor-pointer hover:border-teal-500 transition-all">
-                                <input type="radio" name="ag-investment" value="R$ 800 mil a R$ 1.5 mi" class="sr-only peer">
-                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300 peer-checked:text-teal-600 dark:peer-checked:text-teal-400">Até R$ 1.5M</span>
+                                <input type="radio" name="ag-investment" value="800k á 1.5m" class="sr-only peer">
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300 peer-checked:text-teal-600 dark:peer-checked:text-teal-400">800k á 1.5m</span>
                             </label>
                             <label class="flex items-center justify-center p-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl cursor-pointer hover:border-teal-500 transition-all">
-                                <input type="radio" name="ag-investment" value="Acima de R$ 1.5 mi" class="sr-only peer">
-                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300 peer-checked:text-teal-600 dark:peer-checked:text-teal-400">R$ 1.5M+</span>
+                                <input type="radio" name="ag-investment" value="1.5m +" class="sr-only peer">
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300 peer-checked:text-teal-600 dark:peer-checked:text-teal-400">1.5m +</span>
                             </label>
                         </div>
                     </div>
 
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Horário</label>
-                            <select id="ag-time" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl p-3 text-xs text-slate-900 dark:text-white outline-none focus:border-teal-500">
-                                <option>10:00</option>
-                                <option>14:00</option>
-                                <option>16:00</option>
-                                <option>18:00</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Seu Nome</label>
-                            <input type="text" id="ag-name" placeholder="Seu nome completo" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl p-3 text-xs text-slate-900 dark:text-white outline-none focus:border-teal-500">
-                        </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Seu Nome</label>
+                        <input type="text" id="ag-name" placeholder="Seu nome completo" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl p-3 text-xs text-slate-900 dark:text-white outline-none focus:border-teal-500">
                     </div>
 
                     <button onclick="confirmSchedule()" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-extrabold text-xs py-4 rounded-xl transition-all uppercase tracking-wider shadow-md flex items-center justify-center gap-2">
                         <svg class="w-4 h-4"><use href="#icon-calendar"/></svg>
-                        <span>Confirmar Agendamento VIP</span>
+                        <span>Confirmar Agendamento</span>
                     </button>
                 </div>
             </div>
@@ -245,8 +311,8 @@
     <section class="max-w-6xl mx-auto my-12 px-6">
         <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl text-slate-900 dark:text-white space-y-6 transition-colors">
             <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 font-tech">Localização</span>
-                <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-white mt-1">Regiões Estratégicas em São Paulo</h2>
+                <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 font-tech">Localização Estratégica</span>
+                <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-white mt-1">Imóveis nos Melhores Bairros de São Paulo</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-6 font-tech">
                 <div class="bg-slate-50 dark:bg-slate-950 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2">
@@ -268,7 +334,7 @@
         </div>
     </section>
 
-    <!-- INSTAGRAM -->
+    <!-- SEÇÃO INSTAGRAM -->
     <section class="max-w-6xl mx-auto my-12 px-6">
         <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl text-slate-900 dark:text-white space-y-6 transition-colors">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
@@ -277,27 +343,39 @@
                         <svg class="w-5 h-5"><use href="#icon-instagram"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-sm font-tech">@chris.corretora.tarjab</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Bastidores, andamento de obras e lançamentos exclusivos</p>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-sm font-tech">@chris_imoveistarjab</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Bastidores, andamento de obras e lançamentos exclusivos Tarjab</p>
                     </div>
                 </div>
-                <a href="https://www.instagram.com/chris_imoveistarjab?igsi=ZWc1d25mY2MyeHJm" target="_blank" class="bg-teal-600 hover:bg-teal-500 text-white px-5 py-2.5 rounded-xl font-tech text-xs font-bold transition-all flex items-center gap-2">
+                <a href="https://www.instagram.com/chris_imoveistarjab" target="_blank" class="bg-teal-600 hover:bg-teal-500 text-white px-5 py-2.5 rounded-xl font-tech text-xs font-bold transition-all flex items-center gap-2">
                     <span>Acompanhar Perfil</span> ↗
                 </a>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="https://instagram.com" target="_blank" class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 dark:border-slate-800">
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <a href="https://www.instagram.com/chris_imoveistarjab" target="_blank" class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 dark:border-slate-800">
+                    <img src="https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y" alt="Altus Nova Klabin - Lançamento Tarjab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-tech text-xs font-bold gap-1">
+                        <svg class="w-4 h-4"><use href="#icon-instagram"/></svg> Ver no Instagram
+                    </div>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 dark:border-slate-800">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <a href="https://www.instagram.com/chris_imoveistarjab" target="_blank" class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 dark:border-slate-800">
+                    <img src="https://lh3.googleusercontent.com/d/1nE78dgVuPWeIMeFAfpz5iEBmhdh7RA1H" alt="Criare Praça da Árvore - Empreendimento Tarjab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-tech text-xs font-bold gap-1">
+                        <svg class="w-4 h-4"><use href="#icon-instagram"/></svg> Ver no Instagram
+                    </div>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 dark:border-slate-800">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <a href="https://www.instagram.com/chris_imoveistarjab" target="_blank" class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 dark:border-slate-800">
+                    <img src="https://lh3.googleusercontent.com/d/1y03BZ3XdmYacCh_HpbJQ-ArB2pYupuTX" alt="Riserva Vila Clementino - Apartamentos Tarjab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-tech text-xs font-bold gap-1">
+                        <svg class="w-4 h-4"><use href="#icon-instagram"/></svg> Ver no Instagram
+                    </div>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 dark:border-slate-800">
-                    <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <a href="https://www.instagram.com/chris_imoveistarjab" target="_blank" class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 dark:border-slate-800">
+                    <img src="https://lh3.googleusercontent.com/d/14cvXLzag41NfjCx-16beQbdTCeQ04tL3" alt="Eucalys Moema - Construtora Tarjab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-tech text-xs font-bold gap-1">
+                        <svg class="w-4 h-4"><use href="#icon-instagram"/></svg> Ver no Instagram
+                    </div>
                 </a>
             </div>
         </div>
@@ -310,15 +388,32 @@
         </div>
     </div>
 
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col items-center justify-between p-4 md:p-8">
+        <div class="w-full flex justify-end">
+            <button onclick="closeLightbox()" class="text-white hover:text-teal-400 bg-white/10 hover:bg-white/20 p-2.5 rounded-full font-bold text-lg transition-all focus:outline-none">✕</button>
+        </div>
+
+        <div class="relative w-full max-w-5xl h-[75vh] flex items-center justify-center">
+            <button onclick="changeLightboxSlide(-1)" class="absolute left-2 md:left-4 z-10 bg-black/60 hover:bg-teal-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold shadow-lg transition-all">❮</button>
+            <img id="lightbox-active-img" src="" alt="Imagem do Empreendimento Tarjab" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl transition-all duration-300">
+            <button onclick="changeLightboxSlide(1)" class="absolute right-2 md:right-4 z-10 bg-black/60 hover:bg-teal-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold shadow-lg transition-all">❯</button>
+        </div>
+
+        <div class="text-center pb-2">
+            <span id="lightbox-counter" class="text-teal-400 font-tech text-xs font-bold tracking-widest bg-slate-900/80 px-4 py-1.5 rounded-full border border-slate-800">1 / 1</span>
+        </div>
+    </div>
+
     <!-- WIDGET FLUTUANTE WHATSAPP -->
     <div class="fixed bottom-6 right-6 z-40">
-        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Chris!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20atendimento." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-2xl flex items-center gap-3 border-2 border-white transition-all hover:scale-105 group">
+        <a href="https://wa.me/5511914696009?text=Ol%C3%A1%20Chris!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20atendimento." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-2xl flex items-center gap-3 border-2 border-white transition-all hover:scale-105 group" title="Falar via WhatsApp com a Consultora Chris">
             <span class="relative flex h-3 w-3">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-300"></span>
             </span>
             <div class="hidden group-hover:block font-tech text-left">
-                <p class="text-[10px] text-emerald-100 font-bold uppercase leading-none">Corretora Chris</p>
+                <p class="text-[10px] text-emerald-100 font-bold uppercase leading-none">Consultora Chris</p>
                 <p class="text-xs font-extrabold leading-tight">Atendimento WhatsApp</p>
             </div>
             <svg class="w-6 h-6"><use href="#icon-whatsapp"/></svg>
@@ -326,19 +421,19 @@
     </div>
 
     <script>
-        // Mapeamento opcional de itens de lazer para posições específicas de fotos
         const MOCK_PROPERTIES = [
             { 
                 id: 'prop-altus', 
-                title: 'Altus Vila Mariana', 
-                location: 'Vila Mariana', 
-                bedrooms: '2 e 3 dorms (1 suíte)', 
+                title: 'Altus Nova Klabin', 
+                location: 'Nova Klabin', 
+                bedrooms: '2 e 3 dorms (1 ou 2 suítes)', 
                 bedroomsNum: [2, 3], 
-                area: '64m² a 88m²', 
+                area: '72m² a 93m²', 
                 price: "Sob Consulta", 
-                vagas: '1 ou 2 vagas', 
+                vagas: '1 ou 2 vagas livres', 
                 status: 'Lançamento', 
-                image: 'https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL', 
+                bookPdf: './books/Altus.pdf',
+                image: 'https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y', 
                 images: [
                     'https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL',
                     'https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y',
@@ -346,7 +441,6 @@
                     'https://lh3.googleusercontent.com/d/109ZtLRE4rP9Z5EZFqy_8tIC-XLj8Escw',
                     'https://lh3.googleusercontent.com/d/1U6k2r0J9-sOXE2wV7doRvT-FHcOmtKCT',
                     'https://lh3.googleusercontent.com/d/10q9dqvoAchTP7xSJwaj2EZJuLRLCZbc9',
-                    'https://lh3.googleusercontent.com/d/14lWzZgOAcaHghMjVaGM8AtuK4-5XXJy4',
                     'https://lh3.googleusercontent.com/d/1Ppz_uvwYZfvr3BYK_EIHsLm0DWZ1s2c5',
                     'https://lh3.googleusercontent.com/d/15wlwlUQibUJpGylok2NCcUk6k61AauHd',
                     'https://lh3.googleusercontent.com/d/1tzd2-uGfM6AlF5RraWYKQ5Ighiotv6YU',
@@ -357,31 +451,27 @@
                     'https://lh3.googleusercontent.com/d/1Qgs0zS1X4YH7iQxkAT8k9ycoi8ltaHzc',
                     'https://lh3.googleusercontent.com/d/1JzjIwd26g3V1KK8n39oK5d9VCHMqEkoS'
                 ],
-                lazerMap: {
-                    'Piscina no Rooftop': 1,
-                    'Fitness Center': 2,
-                    'Coworking': 3,
-                    'Salão de Festas': 4,
-                    'Pet Place': 5,
-                    'Espaço Gourmet': 6
-                },
                 plantas: [
-                    { title: 'Planta Tipo 64m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' },
-                    { title: 'Planta Tipo 88m² — 3 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Tipo 01 — 73m² (2 Dorms | 1 Suíte | 1 Vaga Livre)', img: './plantas/Altus/t1.PNG' },
+                    { title: 'Tipo 02 — 93m² (3 Dorms | 1 Suíte | 2 Vagas)', img: './plantas/Altus/tipo2.PNG' },
+                    { title: 'Tipo 02 Living Ampliado — 93m² (2 Suítes | 2 Vagas)', img: './plantas/Altus/tipo22.PNG' },
+                    { title: 'Tipo 03 — 74m² (2 Dorms | 1 Suíte | 1 Vaga Livre)', img: './plantas/Altus/tipo3.PNG' },
+                    { title: 'Tipo 04 — 72m² (2 Dorms | 1 Suíte | 1 Vaga Livre)', img: './plantas/Altus/tipo4.PNG' }
                 ],
-                desc: 'Design moderno e arquitetura elevada no coração da Vila Mariana. A poucos passos do metrô e perto de parques e universidades renomadas.', 
+                desc: 'Design moderno e arquitetura elevada no coração da Nova Klabin. Plantas funcionais com terraço técnico separado, área de serviço ventilada, contra piso nivelado e opção de churrasqueira no terraço social.', 
                 lazer: ['Piscina no Rooftop', 'Fitness Center', 'Coworking', 'Salão de Festas', 'Pet Place', 'Espaço Gourmet'] 
             },
             { 
                 id: 'prop-criare', 
-                title: 'Criare Vila Mariana', 
-                location: 'Vila Mariana', 
+                title: 'Criare Praça da Árvore', 
+                location: 'Praça da Árvore', 
                 bedrooms: '1, 2 e 3 dorms', 
                 bedroomsNum: [1, 2, 3], 
-                area: '38m² a 78m²', 
+                area: '33,56m² a 74,63m²', 
                 price: "Sob Consulta", 
-                vagas: '1 vaga', 
+                vagas: 'Até 2 vagas', 
                 status: 'Lançamento', 
+                bookPdf: './books/Criare.pdf',
                 image: 'https://lh3.googleusercontent.com/d/1nE78dgVuPWeIMeFAfpz5iEBmhdh7RA1H', 
                 images: [
                     'https://lh3.googleusercontent.com/d/1nE78dgVuPWeIMeFAfpz5iEBmhdh7RA1H',
@@ -405,22 +495,25 @@
                     'https://lh3.googleusercontent.com/d/1os3agrb3jQO4uV9RCFIzjpvVscwyJBgy'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 38m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' },
-                    { title: 'Planta Tipo 78m² — 3 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Tipologia A — 74,63m² (3 Dorms | 1 Suíte | Até 2 Vagas)', img: './plantas/Criare/tipo1.PNG' },
+                    { title: 'Tipologia A Living Ampliado — 74,63m² (2 Dorms | 1 Suíte | Até 2 Vagas)', img: './plantas/Criare/tipo11.PNG' },
+                    { title: 'Tipologia B — 57,65m² (2 Dorms | 1 Suíte | 1 Vaga)', img: './plantas/Criare/tipo2.PNG' },
+                    { title: 'Tipologia C — 33,56m² (1 Dorm)', img: './plantas/Criare/tipo3_2.PNG' }
                 ],
-                desc: 'Projeto moderno e funcional pensado para o seu bem-estar e praticidade no dia a dia com planta versátil e excelente insolação.', 
+                desc: 'Projeto moderno e funcional pensado para o seu bem-estar e praticidade na Praça da Árvore com plantas versáteis de 1, 2 e 3 dormitórios com excelente insolação.', 
                 lazer: ['Piscina', 'Fitness', 'Brinquedoteca', 'Salão de Festas', 'Espaço Gourmet', 'Coworking'] 
             },
             { 
-                id: 'prop-eucalys-torre1', 
-                title: 'Eucalys — Torre 1', 
-                location: 'Jardim Prudência', 
+                id: 'prop-eucalys-lirio', 
+                title: 'Eucalys Lírio', 
+                location: 'Moema', 
                 bedrooms: '2 e 3 dorms', 
                 bedroomsNum: [2, 3], 
                 area: '62m² a 85m²', 
                 price: "Sob Consulta", 
                 vagas: '1 vaga', 
                 status: 'Lançamento', 
+                bookPdf: './books/Eucalys.pdf',
                 image: 'https://lh3.googleusercontent.com/d/14cvXLzag41NfjCx-16beQbdTCeQ04tL3', 
                 images: [
                     'https://lh3.googleusercontent.com/d/14cvXLzag41NfjCx-16beQbdTCeQ04tL3',
@@ -428,7 +521,7 @@
                     'https://lh3.googleusercontent.com/d/1Pbu9YGDuaZG7-w0UTs4CzsXLH_NKCfXg',
                     'https://lh3.googleusercontent.com/d/1jjTq2T0I7rl686cmda6WGfJtQxm1YmR9',
                     'https://lh3.googleusercontent.com/d/16sEbPo_zCRUOiYX0pj1c3sairTzg0v6R',
-                    'https://lh3.googleusercontent.com/d/117Vh-06_lfALYgT6PFnjMYaKj5gZgUmM',
+                    'https://lh3.googleusercontent.com/d/11Vh-06_lfALYgT6PFnjMYaKj5gZgUmM',
                     'https://lh3.googleusercontent.com/d/1bxy4Rnu1FgYHKdIFvIRGZpiVR4G-iGas',
                     'https://lh3.googleusercontent.com/d/1s5XKhNP0aQs_cCeazYTGoPOPILJCr34w',
                     'https://lh3.googleusercontent.com/d/1aOfhUTTJM0bDgb1iiNF0xmCjG5IsNziI',
@@ -442,21 +535,25 @@
                     'https://lh3.googleusercontent.com/d/1vflgdN8WaaYxHYeMe-hhAj8leOO3LpQ5'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 62m² — 2 Dorms', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Planta Tipo — 1 Suíte + Living Ampliado', img: './plantas/Eucalys_Lirio/tipo1.JPG' },
+                    { title: 'Planta Tipo — 2 Dorms (1 Suíte) + Terraço Gourmet', img: './plantas/Eucalys_Lirio/tipo2.JPG' },
+                    { title: 'Planta Tipo — 2 Dorms (1 Suíte) + Living Ampliado & Deck', img: './plantas/Eucalys_Lirio/tipo3.JPG' },
+                    { title: 'Planta Tipo — 3 Suítes + Amplo Terraço Gourmet', img: './plantas/Eucalys_Lirio/tipo4.JPG' }
                 ],
-                desc: 'Projeto sofisticado cercado de verde no Jardim Prudência, unindo arquitetura moderna e amplas opções de lazer na Torre 1.', 
+                desc: 'Projeto sofisticado cercado de verde em Moema, unindo arquitetura moderna e amplas opções de lazer no Eucalys Lírio.', 
                 lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Brinquedoteca', 'Espaço Gourmet', 'Pet Place'] 
             },
             { 
-                id: 'prop-eucalys-torre2', 
-                title: 'Eucalys — Torre 2', 
-                location: 'Jardim Prudência', 
+                id: 'prop-eucalys-moema', 
+                title: 'Eucalys Moema', 
+                location: 'Moema', 
                 bedrooms: '1 e 2 dorms', 
                 bedroomsNum: [1, 2], 
                 area: '36m² a 48m²', 
                 price: "Sob Consulta", 
                 vagas: '1 vaga', 
                 status: 'Lançamento', 
+                bookPdf: './books/Eucalys.pdf',
                 image: 'https://lh3.googleusercontent.com/d/1_zsc7RB9Q3lukwOkESnVboCeK56fwN6o', 
                 images: [
                     'https://lh3.googleusercontent.com/d/1_zsc7RB9Q3lukwOkESnVboCeK56fwN6o',
@@ -465,25 +562,25 @@
                     'https://lh3.googleusercontent.com/d/17S-a6h-PJoGByBBypyiSzNzPV6OaXHof'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 36m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Planta Tipo 36m² — 1 Dorm', img: './plantas/Eucalys_Moema/tipo1.JPG' }
                 ],
-                desc: 'Design contemporâneo e estrutura integrada com áreas de convivência exclusivas e plantas eficientes na Torre 2 do Eucalys.', 
+                desc: 'Design contemporâneo e estrutura integrada com áreas de convivência exclusivas e plantas eficientes no Eucalys Moema.', 
                 lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Coworking'] 
             },
             { 
-                id: 'prop-riserva-torre1', 
-                title: 'Riserva — Torre 1', 
-                location: 'Moema', 
-                bedrooms: '2 e 3 dorms', 
-                bedroomsNum: [2, 3], 
-                area: '68m² a 92m²', 
+                id: 'prop-riserva-bosque', 
+                title: 'Riserva Bosque', 
+                location: 'Vila Clementino', 
+                bedrooms: '3 e 4 dorms (3 suítes)', 
+                bedroomsNum: [3, 4], 
+                area: '150m² a 172m²', 
                 price: "Sob Consulta", 
-                vagas: '1 ou 2 vagas', 
+                vagas: '2 ou 3 vagas', 
                 status: 'Lançamento', 
+                bookPdf: './books/Riserva.pdf',
                 image: 'https://lh3.googleusercontent.com/d/1y03BZ3XdmYacCh_HpbJQ-ArB2pYupuTX', 
                 images: [
                     'https://lh3.googleusercontent.com/d/1y03BZ3XdmYacCh_HpbJQ-ArB2pYupuTX',
-                    'https://lh3.googleusercontent.com/d/1cIPPU5Cb4BQ1ha3FQTyxT7LydHNKOK8Q',
                     'https://lh3.googleusercontent.com/d/1osDjoDGCVy6Hw-1wdUt2ifbHFhgehtIo',
                     'https://lh3.googleusercontent.com/d/11pzbvpwvmDK3mC4tleK5nrfhPPhRedTt',
                     'https://lh3.googleusercontent.com/d/1xehifVKx1EGWX7Tiq7vDEXe4qMcdErJZ',
@@ -499,21 +596,27 @@
                     'https://lh3.googleusercontent.com/d/1IHMpCec5mtRBox3s9hwA0fuClvmQZ3oI'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 68m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Tipo 01 — 151m² (3 Suítes | 2 Vagas)', img: './plantas/Riserva_1/tipo1.PNG' },
+                    { title: 'Tipo 02 — 150m² (3 Suítes | 2 Vagas)', img: './plantas/Riserva_1/tipo2.PNG' },
+                    { title: 'Tipo 03 Decorado — 157m² (3 Suítes | 2 Vagas)', img: './plantas/Riserva_1/tipo3.PNG' },
+                    { title: 'Tipo 04 — 156m² (3 Suítes | 2 Vagas)', img: './plantas/Riserva_1/tipo4.PNG' },
+                    { title: 'Tipo 05 — 172m² (4 Dorms / 2 Suítes | 3 Vagas)', img: './plantas/Riserva_1/tipo5.PNG' },
+                    { title: 'Tipo 05 Alterada — 172m² (3 Suítes + Office | 3 Vagas)', img: './plantas/Riserva_1/tipo55.PNG' }
                 ],
-                desc: 'Sofisticação e conforto em um projeto exclusivo com localização privileged na região de Moema na Torre 1.', 
+                desc: 'Sofisticação e alto padrão na Vila Clementino. Plantas amplas de até 172m² com piso de terraço nivelado ao living, caixilharia com persiana integrada motorizada e fino acabamento.', 
                 lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Espaço Gourmet', 'Brinquedoteca', 'Spa'] 
             },
             { 
-                id: 'prop-riserva-torre2', 
-                title: 'Riserva — Torre 2', 
-                location: 'Moema', 
-                bedrooms: '1 e 2 dorms', 
-                bedroomsNum: [1, 2], 
-                area: '38m² a 54m²', 
+                id: 'prop-riserva-horizonte', 
+                title: 'Riserva Horizonte', 
+                location: 'Vila Clementino', 
+                bedrooms: 'Studio e 1 dorm', 
+                bedroomsNum: [1], 
+                area: '31m² a 32m²', 
                 price: "Sob Consulta", 
-                vagas: '1 vaga', 
+                vagas: 'Sem vaga', 
                 status: 'Lançamento', 
+                bookPdf: './books/Riserva.pdf',
                 image: 'https://lh3.googleusercontent.com/d/169XSQfvCU8WdO17qLrnuUl4IH8w9j03s', 
                 images: [
                     'https://lh3.googleusercontent.com/d/169XSQfvCU8WdO17qLrnuUl4IH8w9j03s',
@@ -529,24 +632,28 @@
                     'https://lh3.googleusercontent.com/d/1Lydu4_I4C7I2D-TJn6elggcNIHFWeyOU'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 38m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Tipo 06 — 32m² (1 Dorm)', img: './plantas/Riserva_2/tipo6.PNG' },
+                    { title: 'Tipo 07 e 08 — 31m² (1 Dorm)', img: './plantas/Riserva_2/tipo7e8.PNG' },
+                    { title: 'Tipo 09 — 31m² (1 Dorm)', img: './plantas/Riserva_2/tipo9.PNG' },
+                    { title: 'Tipo 11 e 13 — 32m² (1 Dorm)', img: './plantas/Riserva_2/tipo11e13.PNG' },
+                    { title: 'Tipo 12 — 32m² (1 Dorm)', img: './plantas/Riserva_2/tipo12.PNG' }
                 ],
-                desc: 'Design moderno com infraestrutura completa de lazer e convivência para um público moderno na Torre 2 do Riserva.', 
+                desc: 'Design contemporâneo e inteligente na Vila Clementino. Compactos de alto padrão com 31m² e 32m², piso do terraço nivelado ao living, persianas integradas e infraestrutura moderna para morar ou investir.', 
                 lazer: ['Piscina', 'Fitness Center', 'Coworking', 'Salão de Festas', 'Espaço Gourmet'] 
             },
             { 
                 id: 'prop-viccino', 
-                title: 'Viccino Saúde', 
-                location: 'Saúde', 
-                bedrooms: '2 e 3 dorms', 
-                bedroomsNum: [2, 3], 
-                area: '56m² a 76m²', 
+                title: 'Viccino Praça da Árvore', 
+                location: 'Praça da Árvore', 
+                bedrooms: '1, 2 e 3 dorms (até 3 suítes)', 
+                bedroomsNum: [1, 2, 3], 
+                area: '35m² a 128m²', 
                 price: "Sob Consulta", 
-                vagas: '1 vaga', 
+                vagas: '1 ou 2 vagas cobertas', 
                 status: 'Lançamento', 
-                image: 'https://lh3.googleusercontent.com/d/11ki6nkuYX36I-BAVo9-5Mw2qxLvETJLc', 
+                bookPdf: './books/Viccino.pdf',
+                image: 'https://lh3.googleusercontent.com/d/1Y4Bv3rBgrMIohRyIgmyRV5f3ibNAWJUS', 
                 images: [
-                    'https://lh3.googleusercontent.com/d/11ki6nkuYX36I-BAVo9-5Mw2qxLvETJLc',
                     'https://lh3.googleusercontent.com/d/1Y4Bv3rBgrMIohRyIgmyRV5f3ibNAWJUS',
                     'https://lh3.googleusercontent.com/d/1uRTNot6SryWP3jfX7HaYFtwu7OQXQEQ-',
                     'https://lh3.googleusercontent.com/d/1H_XAIi0FRZANIlqLwvZPc99XKZMhaOSL',
@@ -567,41 +674,103 @@
                     'https://lh3.googleusercontent.com/d/1DE4hU3dy5pN8bwCIF5F3C2uyrzfDLAab'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 56m² — 2 Dorms', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Planta Tipo A — 128m² (3 Suítes | 2 Vagas Cobre/Demarcadas)', img: './plantas/Viccino/tipo1.PNG' },
+                    { title: 'Planta Tipo B — 90m² (3 Dorms / 1 Suíte | 2 Vagas Cobre/Demarcadas)', img: './plantas/Viccino/tipo2.PNG' },
+                    { title: 'Planta Tipo C — 60m² (2 Dorms | 1 Vaga Coberta e Demarcada)', img: './plantas/Viccino/tipo3.PNG' },
+                    { title: 'Planta Tipo D — 35m² (1 Dorm)', img: './plantas/Viccino/tipo4.PNG' }
                 ],
-                desc: 'Arquitetura moderna e estrutura completa de lazer para garantir conforto e praticidade a poucos minutos da estação de metrô Saúde.', 
+                desc: 'Arquitetura moderna e estrutura completa na região da Praça da Árvore. Plantas bem distribuídas com terraço técnico isolado, piso do terraço nivelado ao living, persianas integradas e manta de atenuação acústica nos dormitórios.', 
                 lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Brinquedoteca', 'Coworking'] 
             },
-            { 
+           { 
                 id: 'prop-vila-ares', 
-                title: 'Vila Ares Vila Mariana', 
-                location: 'Vila Mariana', 
-                bedrooms: '1 e 2 dorms', 
-                bedroomsNum: [1, 2], 
-                area: '42m² a 62m²', 
+                title: 'Vila Ares', 
+                location: 'Saúde', 
+                bedrooms: '2 e 3 dorms (1 suíte)', 
+                bedroomsNum: [2, 3], 
+                area: '60m² a 91m²', 
                 price: "Sob Consulta", 
-                vagas: 'Opção de vaga', 
-                status: 'Em Construção', 
-                image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80', 
+                vagas: '1 ou 2 vagas', 
+                status: 'Lançamento', 
+                bookPdf: '',
+                image: './plantas/Vila_Ares/midias/FACHADA.webp', 
                 images: [
-                    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80'
+                    './plantas/Vila_Ares/midias/FACHADA.webp',
+                    './plantas/Vila_Ares/midias/04-TAR_ALC_CIRCULACAO_T1_PEF.webp',
+                    './plantas/Vila_Ares/midias/05-TAR_ALC_COWORKING_T1_PEF.webp',
+                    './plantas/Vila_Ares/midias/06-TAR_ALC_HALL_T1_PEF.webp',
+                    './plantas/Vila_Ares/midias/07-TAR_ALC_DELIVERY_T1_P02.webp',
+                    './plantas/Vila_Ares/midias/08-TAR_ALC_FESTAS_T01_PEF.webp',
+                    './plantas/Vila_Ares/midias/09-TAR_ALC_CHURRASQUEIRA_T1_PEF.webp',
+                    './plantas/Vila_Ares/midias/11-TAR_ALC_APOIO-FESTAS_T2_PEF.webp',
+                    './plantas/Vila_Ares/midias/12-TAR_ALC_HALL_T2_PEF.webp',
+                    './plantas/Vila_Ares/midias/13-TAR_ALC_ACADEMIA_TORRE_02_P02.webp',
+                    './plantas/Vila_Ares/midias/14-TAR_ALC_MASSAGEM_T2_P02.webp',
+                    './plantas/Vila_Ares/midias/15-TAR_ALC_JOGOS_TORRE_02_P02.webp',
+                    './plantas/Vila_Ares/midias/16-TAR_ALC_BRINQUEDOTECA-T02_PEF.webp',
+                    './plantas/Vila_Ares/midias/17-TAR_ALC_FESTAS-T2_C01_P02.webp',
+                    './plantas/Vila_Ares/midias/22-TAR_ALC_PETPLACE_T1_P02.jpg',
+                    './plantas/Vila_Ares/midias/23-TAR_ALC_PETPLACE_T2_P02.jpg'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 42m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Planta 60m² — 1 Dorm + 1 Suíte (1 Vaga)', img: './plantas/Vila_Ares/tipo1.png' },
+                    { title: 'Planta 60m² — 1 Suíte + Sala Ampliada (1 Vaga)', img: './plantas/Vila_Ares/tipo2.png' },
+                    { title: 'Planta 62m² — 1 Dorm + 1 Suíte (1 Vaga | F3, F4, F6)', img: './plantas/Vila_Ares/tipo3.png' },
+                    { title: 'Planta 62m² — 1 Suíte + Sala Ampliada (1 Vaga | F3, F4, F6)', img: './plantas/Vila_Ares/tipo4.png' },
+                    { title: 'Planta 62m² — 1 Dorm + 1 Suíte (1 Vaga | F11)', img: './plantas/Vila_Ares/tipo5.png' },
+                    { title: 'Planta 63m² — 1 Dorm + 1 Suíte (1 Vaga | F9, F10)', img: './plantas/Vila_Ares/tipo6.png' },
+                    { title: 'Planta 74m² — 2 Dorms + 1 Suíte (1 Vaga | F5)', img: './plantas/Vila_Ares/tipo7.png' },
+                    { title: 'Planta 74m² — 1 Dorm + 1 Suíte + Sala Ampliada (1 Vaga | F5)', img: './plantas/Vila_Ares/tipo8.png' },
+                    { title: 'Planta 90m² — 2 Dorms + 1 Suíte (2 Vagas | F1, F2, F7, F8)', img: './plantas/Vila_Ares/tipo9.png' },
+                    { title: 'Planta 91m² — 2 Dorms + 1 Suíte (2 Vagas | F2 1º Pav)', img: './plantas/Vila_Ares/tipo10.png' }
                 ],
-                desc: 'Ares modernos em um dos bairros mais desejados de São Paulo. Ideal para morar com sofisticação ou para alta rentabilidade em locação.', 
-                lazer: ['Rooftop Bar', 'Coworking com Salas Privativas', 'Fitness Center', 'Lavanderia'] 
+                desc: 'Empreendimento moderno e aconchegante no bairro da Saúde. Plantas bem distribuídas de 60m² a 91m² com opção de sala ampliada, churrasqueira a gás no terraço social e infraestrutura completa de lazer.', 
+                lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Brinquedoteca', 'Pet Place', 'Sala de Massagem', 'Coworking'] 
+            },
+            { 
+                id: 'prop-isla-morumbi', 
+                title: 'Isla Morumbi', 
+                location: 'Morumbi', 
+                bedrooms: '1 e 2 dorms', 
+                bedroomsNum: [1, 2], 
+                area: '33,68m² a 51m²', 
+                price: "Sob Consulta", 
+                vagas: '1 vaga', 
+                status: 'Lançamento', 
+                bookPdf: './books/Isla.pdf',
+                image: 'https://lh3.googleusercontent.com/d/1bkkoJWkrQtbS1i55ClLp-06Coox_LLsB', 
+                images: [
+                    'https://lh3.googleusercontent.com/d/1SVm7eI_hRFendYLU5CNlTXGj3OXaFeSi',
+                    'https://lh3.googleusercontent.com/d/1bkkoJWkrQtbS1i55ClLp-06Coox_LLsB',
+                    'https://lh3.googleusercontent.com/d/14xVFjrCHhWKuq4PUQ9tFrzFxvRazvgj6',
+                    'https://lh3.googleusercontent.com/d/1GWt-9-uPvo9KsYfFX2-YXJSM21pJ7PVz',
+                    'https://lh3.googleusercontent.com/d/1S5BLSIWN-RcFj4OLev_eR0xbCuq6_ZSQ',
+                    'https://lh3.googleusercontent.com/d/1TqrD7GgkBLep9ujGRy5N8FeQgMiIT_R_',
+                    'https://lh3.googleusercontent.com/d/1BZyvnyTa7Xvfyjt5dtd2cH8tvY_gfb16',
+                    'https://lh3.googleusercontent.com/d/1jzc7IdMx8gLUUsqlwvBFol6EsmskSCap',
+                    'https://lh3.googleusercontent.com/d/1Mm0egKwi5Sfzqd2DYIkNMWw55U-cgNhT'
+                ],
+                plantas: [
+                    { title: 'Tipo A — 49m² (2 Dorms)', img: './plantas/Isla/tipo1.PNG' },
+                    { title: 'Tipo B — 44,06m² (2 Dorms)', img: './plantas/Isla/tipo2.PNG' },
+                    { title: 'Tipo C — 33,68m² (1 Dorm)', img: './plantas/Isla/tipo3.PNG' },
+                    { title: 'Tipo D — 51m² (2 Dorms)', img: './plantas/Isla/tipo4.PNG' },
+                    { title: 'Tipo E — 41m² (2 Dorms)', img: './plantas/Isla/tipo5.PNG' }
+                ],
+                desc: 'Um verdadeiro refúgio urbano no Morumbi com plantas inteligentes e bem aproveitadas de 1 e 2 dormitórios (33m² a 51m²), área verde integrada e estrutura de lazer completa.', 
+                lazer: ['Piscina', 'Fitness Center', 'Brinquedoteca', 'Salão de Festas', 'Espaço Grill'] 
             },
             { 
                 id: 'prop-signature', 
                 title: 'Signature Ipiranga', 
                 location: 'Ipiranga', 
-                bedrooms: '2 e 3 dorms', 
-                bedroomsNum: [2, 3], 
-                area: '67m² a 95m²', 
+                bedrooms: '2 dorms (1 ou 2 suítes)', 
+                bedroomsNum: [2], 
+                area: '74,82m² a 78,82m²', 
                 price: "Sob Consulta", 
                 vagas: '1 ou 2 vagas', 
                 status: 'Lançamento', 
+                bookPdf: './books/Signatur.pdf',
                 image: 'https://lh3.googleusercontent.com/d/19al3-kBSfOcTgD_C6e9zCPkvhLHV0mlm', 
                 images: [
                     'https://lh3.googleusercontent.com/d/19al3-kBSfOcTgD_C6e9zCPkvhLHV0mlm',
@@ -619,54 +788,28 @@
                     'https://lh3.googleusercontent.com/d/13leiR0Wcblw6yTaCLAksg7jnKuWO8gzx'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 67m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Final 3 — 78,82m² (2 Dorms | 1 Suíte)', img: './plantas/Signatur/tipo1.PNG' },
+                    { title: 'Final 4 — 77,24m² (2 Dorms | 1 Suíte)', img: './plantas/Signatur/tipo2.PNG' },
+                    { title: 'Final 5 e 6 — 74,82m² (2 Dorms | 2 Suítes + Lavabo)', img: './plantas/Signatur/tipo3.PNG' }
                 ],
-                desc: 'Exclusividade e alto padrão em cada detalhe no Ipiranga, com acabamento refinado e planta pensada para momentos inesquecíveis.', 
+                desc: 'Exclusividade e alto padrão em cada detalhe no Ipiranga. Plantas versáteis de 74m² a 78m² com espaço para home office, terraço integrado ao living e acabamentos refinados.', 
                 lazer: ['Piscina', 'Fitness Center', 'Salão de Festas', 'Espaço Gourmet', 'Coworking'] 
             },
-            { 
-                id: 'prop-isla-morumbi', 
-                title: 'Isla Morumbi', 
-                location: 'Morumbi', 
-                bedrooms: '2 e 3 dorms', 
-                bedroomsNum: [2, 3], 
-                area: '58m² a 82m²', 
-                price: "Sob Consulta", 
-                vagas: '1 vaga', 
-                status: 'Lançamento', 
-                image: 'https://lh3.googleusercontent.com/d/1SVm7eI_hRFendYLU5CNlTXGj3OXaFeSi', 
-                images: [
-                    'https://lh3.googleusercontent.com/d/1SVm7eI_hRFendYLU5CNlTXGj3OXaFeSi',
-                    'https://lh3.googleusercontent.com/d/1bkkoJWkrQtbS1i55ClLp-06Coox_LLsB',
-                    'https://lh3.googleusercontent.com/d/14xVFjrCHhWKuq4PUQ9tFrzFxvRazvgj6',
-                    'https://lh3.googleusercontent.com/d/1GWt-9-uPvo9KsYfFX2-YXJSM21pJ7PVz',
-                    'https://lh3.googleusercontent.com/d/1S5BLSIWN-RcFj4OLev_eR0xbCuq6_ZSQ',
-                    'https://lh3.googleusercontent.com/d/1TqrD7GgkBLep9ujGRy5N8FeQgMiIT_R_',
-                    'https://lh3.googleusercontent.com/d/1BZyvnyTa7Xvfyjt5dtd2cH8tvY_gfb16',
-                    'https://lh3.googleusercontent.com/d/1jzc7IdMx8gLUUsqlwvBFol6EsmskSCap',
-                    'https://lh3.googleusercontent.com/d/1Mm0egKwi5Sfzqd2DYIkNMWw55U-cgNhT'
-                ],
-                plantas: [
-                    { title: 'Planta Tipo 58m² — 2 Dorms (1 Suíte)', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80' }
-                ],
-                desc: 'Um verdadeiro refúgio urbano no Morumbi com área verde integrada e completa infraestrutura de lazer para toda a família.', 
-                lazer: ['Piscina', 'Fitness Center', 'Brinquedoteca', 'Salão de Festas', 'Espaço Grill'] 
-            },
-            { 
+           { 
                 id: 'prop-origem', 
-                title: 'Origem Bosque da Saúde', 
-                location: 'Bosque da Saúde', 
-                bedrooms: '1, 2 e 3 dorms', 
-                bedroomsNum: [1, 2, 3], 
-                area: '40m² a 75m²', 
+                title: 'Origem Freguesia do Ó', 
+                location: 'Freguesia do Ó', 
+                bedrooms: '2 e 3 dorms (opção Living Ampliado ou Escritório)', 
+                bedroomsNum: [2, 3], 
+                area: '57m² a 66m²', 
                 price: "Sob Consulta", 
                 vagas: '1 vaga', 
                 status: 'Lançamento', 
+                bookPdf: './books/Origem.pdf',
                 image: 'https://lh3.googleusercontent.com/d/1U4LqwBNlM_-A5kktFGqT_7jp7VYjOwBr', 
                 images: [
                     'https://lh3.googleusercontent.com/d/1U4LqwBNlM_-A5kktFGqT_7jp7VYjOwBr',
                     'https://lh3.googleusercontent.com/d/1jUZWzPKcRjt-FK8hZvbZU2-jhkDco7fQ',
-                    'https://lh3.googleusercontent.com/d/1McuhqbO7qOVOvmOe98JZ9vxnn9lFXyr',
                     'https://lh3.googleusercontent.com/d/10EAgc_3WFvohpPQ-C5nLzbYLKmI79r9o',
                     'https://lh3.googleusercontent.com/d/1IHRwox_fmn4ORK08RY9imk1qH8W8p-ZU',
                     'https://lh3.googleusercontent.com/d/1hOGXahdN3EaC_tCQ3GCwuRBkxwUhOa9u',
@@ -676,9 +819,12 @@
                     'https://lh3.googleusercontent.com/d/1ItenUu21gJ3r1KoBrsSZncVf9xoOaQ6T'
                 ],
                 plantas: [
-                    { title: 'Planta Tipo 40m² — 1 Dorm', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80' }
+                    { title: 'Planta Tipo B — 57m² (2 Dorms)', img: './plantas/Origem/tipo1.PNG' },
+                    { title: 'Planta Tipo A — 66m² (3 Dorms)', img: './plantas/Origem/tipo2.PNG' },
+                    { title: 'Planta Tipo A Opção — 66m² (2 Dorms | Living Ampliado)', img: './plantas/Origem/tipo3.PNG' },
+                    { title: 'Planta Tipo A Opção — 66m² (2 Dorms + Escritório)', img: './plantas/Origem/tipo4.PNG' }
                 ],
-                desc: 'Onde o bem-estar encontra a praticidade. Projeto moderno pensado para o seu estilo de vida no Bosque da Saúde.', 
+                desc: 'Onde o bem-estar encontra a praticidade na Freguesia do Ó. Projetos modernos de 57m² e 66m² com terraço integrado à cozinha e sala, piso nivelado entre ambientes, contrapiso flutuante com manta acústica e preparação para ar-condicionado nos dormitórios.', 
                 lazer: ['Piscina', 'Fitness', 'Salão de Festas', 'Espaço Gourmet', 'Coworking', 'Pet Place'] 
             }
         ];
@@ -686,9 +832,9 @@
         let filteredProperties = [...MOCK_PROPERTIES];
         let currentCarouselImages = [];
         let currentCarouselIndex = 0;
-        let currentProperty = null;
+        let lightboxImages = [];
+        let lightboxIndex = 0;
 
-        // FUNÇÃO DE TEMA (DARK / LIGHT MODE)
         function toggleTheme() {
             const html = document.documentElement;
             if (html.classList.contains('dark')) {
@@ -700,7 +846,6 @@
             }
         }
 
-        // CARREGAR PREFERÊNCIA DE TEMA
         if (localStorage.getItem('theme') === 'light') {
             document.documentElement.classList.remove('dark');
         }
@@ -755,50 +900,56 @@
             });
         }
 
-        // DIRECIONAR O CARROSSEL ATRAVÉS DO BOTÃO DE LAZER
-        function goToLazerSlide(itemLazer, itemIndex) {
-            if (!currentProperty) return;
-
-            // 1. Tenta usar o mapeamento customizado caso exista
-            if (currentProperty.lazerMap && currentProperty.lazerMap[itemLazer] !== undefined) {
-                const targetIdx = currentProperty.lazerMap[itemLazer];
-                if (targetIdx < currentCarouselImages.length) {
-                    goToSlide(targetIdx);
-                    scrollToCarousel();
-                    return;
-                }
-            }
-
-            // 2. Mapeamento dinâmico proporcional com base no índice da opção de lazer
-            if (currentCarouselImages.length > 1) {
-                const calculatedIndex = (itemIndex + 1) % currentCarouselImages.length;
-                goToSlide(calculatedIndex);
+        function openLightbox(imagesList = null, index = 0) {
+            if (imagesList) {
+                lightboxImages = imagesList;
+                lightboxIndex = index;
             } else {
-                goToSlide(0);
+                lightboxImages = currentCarouselImages;
+                lightboxIndex = currentCarouselIndex;
             }
 
-            scrollToCarousel();
+            if (!lightboxImages || lightboxImages.length === 0) return;
+            
+            updateLightboxDOM();
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+            document.getElementById('lightbox-modal').classList.add('flex');
         }
 
-        function scrollToCarousel() {
-            const container = document.getElementById('carousel-container');
-            if (container) {
-                container.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+            document.getElementById('lightbox-modal').classList.remove('flex');
+        }
+
+        function changeLightboxSlide(direction) {
+            if (!lightboxImages.length) return;
+            lightboxIndex = (lightboxIndex + direction + lightboxImages.length) % lightboxImages.length;
+            updateLightboxDOM();
+        }
+
+        function updateLightboxDOM() {
+            const activeImg = document.getElementById('lightbox-active-img');
+            const counter = document.getElementById('lightbox-counter');
+            if (activeImg) activeImg.src = lightboxImages[lightboxIndex];
+            if (counter) counter.textContent = `${lightboxIndex + 1} / ${lightboxImages.length}`;
         }
 
         function selectPlanta(imgUrl, title) {
             const plantaImg = document.getElementById('planta-active-img');
             const plantaTitle = document.getElementById('planta-active-title');
+            const plantaContainer = document.getElementById('planta-active-container');
+
             if (plantaImg) plantaImg.src = imgUrl;
             if (plantaTitle) plantaTitle.textContent = title;
+            if (plantaContainer) {
+                plantaContainer.setAttribute('onclick', `openLightbox(['${imgUrl}'], 0)`);
+            }
         }
 
         function openModal(id) {
             const p = MOCK_PROPERTIES.find(item => item.id === id);
             if (!p) return;
 
-            currentProperty = p;
             currentCarouselImages = p.images && p.images.length > 0 ? p.images : [p.image];
             currentCarouselIndex = 0;
 
@@ -815,21 +966,25 @@
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div id="carousel-container" class="space-y-2">
-                        <div class="relative w-full h-64 overflow-hidden rounded-2xl shadow group">
-                            <img id="carousel-active-img" src="${currentCarouselImages[0]}" class="w-full h-full object-cover transition-all duration-300">
+                        <div class="relative w-full h-64 overflow-hidden rounded-2xl shadow group cursor-pointer" onclick="openLightbox(null, currentCarouselIndex)">
+                            <img id="carousel-active-img" src="${currentCarouselImages[0]}" alt="${p.title}" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105">
                             
+                            <span class="absolute top-2 right-2 bg-black/60 hover:bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded-md border border-white/20 backdrop-blur-sm flex items-center gap-1">
+                             Clique para ampliar
+                            </span>
+
                             ${currentCarouselImages.length > 1 ? `
-                                <button onclick="changeSlide(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-md transition-all">❮</button>
-                                <button onclick="changeSlide(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-md transition-all">❯</button>
+                                <button onclick="event.stopPropagation(); changeSlide(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-md transition-all">❮</button>
+                                <button onclick="event.stopPropagation(); changeSlide(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-md transition-all">❯</button>
                                 <span id="carousel-counter" class="absolute bottom-2 right-2 bg-slate-950/80 text-teal-400 text-[10px] font-bold px-2 py-0.5 rounded-md border border-slate-700">1 / ${currentCarouselImages.length}</span>
                             ` : ''}
                         </div>
 
                         ${currentCarouselImages.length > 1 ? `
-                            <div class="flex gap-2 overflow-x-auto pb-1">
+                            <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
                                 ${currentCarouselImages.map((img, idx) => `
                                     <button id="thumb-${idx}" onclick="goToSlide(${idx})" class="w-16 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${idx === 0 ? 'border-teal-500 ring-2 ring-teal-500' : 'opacity-60 border-transparent'}">
-                                        <img src="${img}" class="w-full h-full object-cover">
+                                        <img src="${img}" alt="Miniatura ${idx + 1}" class="w-full h-full object-cover">
                                     </button>
                                 `).join('')}
                             </div>
@@ -847,22 +1002,25 @@
                             <li>• Área Privativa: ${p.area}</li>
                             <li>• Vagas de Garagem: ${p.vagas}</li>
                         </ul>
+
+                        ${p.bookPdf ? `
+                            <div class="pt-2">
+                                <a href="${p.bookPdf}" target="_blank" class="w-full bg-teal-600 hover:bg-teal-500 text-white p-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
+                                    <svg class="w-4 h-4"><use href="#icon-book"/></svg>
+                                    <span>Baixar / Visualizar Book Completo (PDF)</span>
+                                </a>
+                            </div>
+                        ` : ''}
                     </div>
                 </div>
 
-
-                <!-- ITENS DE LAZER EM FORMATO DE BOTÕES CLICÁVEIS -->
                 <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-xs font-bold uppercase text-slate-700 dark:text-slate-300">Itens de Lazer & Comodidades</h3>
-                        <span class="text-[10px] text-teal-600 dark:text-teal-400 font-medium">Clique no item para visualizar no carrossel</span>
-                    </div>
+                    <h3 class="text-xs font-bold uppercase text-slate-700 dark:text-slate-300">Itens de Lazer & Comodidades</h3>
                     <div class="flex flex-wrap gap-2">
-                        ${p.lazer.map((item, idx) => `
-                            <button onclick="goToLazerSlide('${item}', ${idx})" class="bg-slate-100 hover:bg-teal-600 hover:text-white dark:bg-slate-900 dark:hover:bg-teal-500 dark:hover:text-white text-teal-700 dark:text-teal-300 border-slate-300 dark:border-slate-700 border px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 flex items-center gap-1.5 shadow-sm active:scale-95">
-                                <span></span>
-                                <span>${item}</span>
-                            </button>
+                        ${p.lazer.map(item => `
+                            <span class="bg-slate-100 dark:bg-slate-900 text-teal-700 dark:text-teal-300 border-slate-300 dark:border-slate-700 border px-3 py-1.5 rounded-full text-[11px] font-semibold shadow-sm">
+                                ${item}
+                            </span>
                         `).join('')}
                     </div>
                 </div>
@@ -874,9 +1032,9 @@
                         <h3 class="text-xs font-bold uppercase text-slate-700 dark:text-slate-300">Plantas do Apartamento</h3>
                     </div>
                     
-                    <div class="flex gap-2 overflow-x-auto pb-2">
+                    <div class="flex flex-wrap gap-2 pb-2">
                         ${p.plantas.map((planta, idx) => `
-                            <button onclick="selectPlanta('${planta.img}', '${planta.title}')" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500 rounded-lg text-xs text-slate-700 dark:text-slate-300 font-medium shrink-0 transition-colors">
+                            <button onclick="selectPlanta('${planta.img}', '${planta.title}')" class="px-3 py-2 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500 rounded-lg text-xs text-slate-700 dark:text-slate-300 font-medium transition-colors text-left break-words max-w-full">
                                 ${planta.title}
                             </button>
                         `).join('')}
@@ -884,19 +1042,24 @@
 
                     <div class="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-center space-y-2">
                         <p id="planta-active-title" class="text-xs font-bold text-teal-600 dark:text-teal-400">${p.plantas[0].title}</p>
-                        <div class="w-full max-h-80 overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-950 flex items-center justify-center border border-slate-300 dark:border-slate-800">
-                            <img id="planta-active-img" src="${p.plantas[0].img}" class="w-full h-full object-cover">
+                        <div id="planta-active-container" class="relative w-full max-h-80 overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-950 flex items-center justify-center border border-slate-300 dark:border-slate-800 cursor-pointer group" onclick="openLightbox(['${p.plantas[0].img}'], 0)">
+                            <img id="planta-active-img" src="${p.plantas[0].img}" alt="Planta ${p.title}" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
+                            <span class="absolute top-2 right-2 bg-black/60 hover:bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded-md border border-white/20 backdrop-blur-sm">
+                                Clique para ampliar
+                            </span>
                         </div>
                     </div>
                 </div>
                 ` : ''}
 
-                
-
-                <div class="pt-2 flex">
-                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Chris!%20Gostaria%20de%20saber%20mais%20sobre%20o%20${encodeURIComponent(p.title)}" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+                <div class="pt-2 grid sm:grid-cols-2 gap-3">
+                    <a href="https://wa.me/5511914696009?text=Ol%C3%A1%20Chris!%20Gostaria%20de%20saber%20mais%20sobre%20o%20${encodeURIComponent(p.title)}" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all">
                         <svg class="w-4 h-4"><use href="#icon-whatsapp"/></svg>
-                        <span>Falar com a Chris</span>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="mailto:chris@chriscorvino.com.br?subject=Interesse%20no%20${encodeURIComponent(p.title)}&body=Ol%C3%A1%20Chris,%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20${encodeURIComponent(p.title)}." class="w-full bg-slate-800 hover:bg-slate-700 text-white p-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 border border-slate-700 transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <span>Enviar E-mail</span>
                     </a>
                 </div>
             `;
@@ -917,9 +1080,9 @@
                 return;
             }
             container.innerHTML = filteredProperties.map(p => `
-                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-teal-500/50 transition-all font-tech group">
+                <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-teal-500/50 transition-all font-tech group">
                     <div class="relative overflow-hidden h-56 cursor-pointer" onclick="openModal('${p.id}')">
-                        <img src="${p.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-4 left-4 bg-slate-950/90 text-teal-400 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-teal-500/30">${p.status}</span>
                     </div>
                     <div class="p-6 space-y-4">
@@ -941,14 +1104,13 @@
                             <button onclick="openModal('${p.id}')" class="bg-teal-600 hover:bg-teal-500 text-white px-4 py-2.5 rounded-xl font-bold uppercase text-[11px] tracking-wider transition-colors">Ficha Técnica</button>
                         </div>
                     </div>
-                </div>
+                </article>
             `).join('');
         }
 
         function confirmSchedule() {
             const prop = document.getElementById('ag-prop').value;
             const date = document.getElementById('ag-date').value;
-            const time = document.getElementById('ag-time').value;
             const name = document.getElementById('ag-name').value;
             const investment = document.querySelector('input[name="ag-investment"]:checked')?.value || 'Não informado';
 
@@ -957,9 +1119,15 @@
                 return;
             }
 
-            const msg = encodeURIComponent(`Olá Chris! Gostaria de agendar uma visita:\n- Empreendimento: ${prop}\n- Data: ${date} às ${time}\n- Pretensão de Investimento: ${investment}\n- Nome: ${name}`);
-            window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
+            const msg = encodeURIComponent(`Olá Chris! Gostaria de agendar uma visita:\n- Empreendimento: ${prop}\n- Data: ${date}\n- Pretensão de Investimento: ${investment}\n- Nome: ${name}`);
+            window.open(`https://wa.me/5511914696009?text=${msg}`, '_blank');
         }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
 
         renderUrbanGrid();
     </script>
@@ -971,11 +1139,12 @@
                 <div class="lg:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="bg-white dark:bg-slate-900 p-2 rounded-xl border border-slate-200 dark:border-slate-800 inline-block">
-                            <svg class="w-32 h-8"><use href="#tarjab-logo"/></svg>
+                            <img src="logo.png" alt="Chris Negócios Imobiliários" class="h-10 w-auto max-h-10 object-contain bg-transparent hidden dark:block">
+                            <img src="logo2.png" alt="Chris Negócios Imobiliários" class="h-10 w-auto max-h-10 object-contain bg-transparent block dark:hidden">
                         </div>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
-                        Chris, sua consultora imobiliária VIP e credenciada Tarjab. Especialista nos empreendimentos Altus, Criare, Eucalys, Riserva, Viccino, Vila Ares, Signature, Isla e Origem.
+                        Chris, sua consultora imobiliária credenciada Tarjab. Especialista nos empreendimentos Altus, Criare, Eucalys, Riserva, Viccino, Vila Ares, Signature, Isla e Origem.
                     </p>
                     <div class="flex items-center gap-2 pt-1">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -987,30 +1156,43 @@
                     <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest">Navegação</h4>
                     <ul class="space-y-2 text-xs">
                         <li><a href="#imoveis-urban" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Imóveis</a></li>
-                        <li><a href="#agendamento" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Agendar Visita VIP</a></li>
+                        <li><a href="#agendamento" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Agendar Visita Presencial</a></li>
                     </ul>
                 </div>
 
+                <!-- LISTA COMPLETA DE EMPREENDIMENTOS -->
                 <div class="space-y-3">
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest">Lançamentos</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="javascript:void(0)" onclick="openModal('prop-altus')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Altus — Vila Mariana</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('prop-riserva-torre1')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Riserva — Moema</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('prop-eucalys-torre1')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Eucalys — Jd. Prudência</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('prop-criare')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Criare — Vila Mariana</a></li>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest">Empreendimentos</h4>
+                    <ul class="space-y-1.5 text-xs">
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-altus')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Altus — Nova Klabin</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-criare')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Criare — Praça da Árvore</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-eucalys-lirio')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Eucalys Lírio — Moema</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-eucalys-moema')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Eucalys Moema — Moema</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-riserva-bosque')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Riserva Bosque — Vila Clementino</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-riserva-horizonte')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Riserva Horizonte — Vila Clementino</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-viccino')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Viccino — Praça da Árvore</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-vila-ares')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Vila Ares — Saúde</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-signature')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Signature — Ipiranga</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-isla-morumbi')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Isla — Morumbi</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('prop-origem')" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Origem — Freguesia do Ó</a></li>
                     </ul>
                 </div>
 
+                <!-- CONTATO DIRETO -->
                 <div class="space-y-3">
                     <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest">Contato Direto</h4>
                     <ul class="space-y-3 text-xs">
                         <li class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0"><use href="#icon-whatsapp"/></svg>
-                            <a href="https://wa.me/5511999999999" target="_blank" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">(11) 99999-9999</a>
+                            <a href="https://wa.me/5511914696009" target="_blank" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">11 91469-6009</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <a href="mailto:chris@chriscorvino.com.br" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">chris@chriscorvino.com.br</a>
                         </li>
                         <li class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0"><use href="#icon-instagram"/></svg>
-                            <a href="https://www.instagram.com/chris_imoveistarjab?igsi=ZWc1d25mY2MyeHJm" target="_blank" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">@chris.corretora.tarjab</a>
+                            <a href="https://www.instagram.com/chris_imoveistarjab" target="_blank" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">@chris_imoveistarjab</a>
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5"><use href="#icon-location"/></svg>
@@ -1021,7 +1203,7 @@
             </div>
 
             <div class="border-t border-slate-200 dark:border-slate-800/80 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-                <p>© 2026 Chris Corretora Tarjab. Todos os direitos reservados. CRECI: 000000-F.</p>
+                <p>© 2026 Chris Consultora Tarjab. Todos os direitos reservados. CRECI: 250840-F.</p>
                 <p class="text-center md:text-right">As imagens dos imóveis são meramente ilustrativas. Valores e disponibilidades sujeitos a alteração sem aviso prévio.</p>
             </div>
         </div>
