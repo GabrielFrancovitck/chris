@@ -16,14 +16,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Chris — Consultora Autorizada Tarjab">
     <meta property="og:description" content="Portfólio de imóveis e lançamentos exclusivos Tarjab em São Paulo. Agende sua visita diretamente com a Chris.">
-    <meta property="og:image" content="https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y">
     <meta property="og:locale" content="pt_BR">
     
     <!-- TWITTER CARDS -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Chris — Consultora Autorizada Tarjab">
     <meta name="twitter:description" content="Lançamentos de apartamentos Tarjab na Nova Klabin, Praça da Árvore, Moema, Vila Clementino, Saúde, Morumbi, Ipiranga, Mirandópolis e Freguesia do Ó.">
-    <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y">
 
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='none' stroke='%232dd4bf' stroke-width='6' stroke-linejoin='round' d='M10 80h80M20 80V55l10-8v33M33 80V38l14-11v53M51 80V12l16 11v57M71 80V35l11 8v37'/></svg>">
@@ -59,6 +59,10 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         html, body {
             overflow-x: hidden;
             width: 100%;
@@ -157,10 +161,10 @@
     <header id="main-header" class="sticky top-0 z-40 bg-white/90 dark:bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-md transition-colors w-full">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-2 sm:gap-4">
             <div class="flex items-center gap-2 sm:gap-4 overflow-hidden">
-                <div class="flex items-center justify-center shrink-0">
+                <a href="#" class="flex items-center justify-center shrink-0 hover:opacity-80 transition-opacity" title="Voltar ao início">
                     <img src="logo.png" alt="Chris Negócios Imobiliários" class="h-10 sm:h-12 w-auto object-contain bg-transparent hidden dark:block">
                     <img src="logo2.png" alt="Chris Negócios Imobiliários" class="h-10 sm:h-12 w-auto object-contain bg-transparent block dark:hidden">
-                </div>
+                </a>
                 
                 <div class="h-8 w-px bg-slate-300 dark:bg-slate-800 hidden sm:block"></div>
                 
@@ -460,7 +464,6 @@
                 bookPdf: './books/Altus.pdf',
                 image: 'https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y', 
                 images: [
-                    'https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL',
                     'https://lh3.googleusercontent.com/d/1yh917HPm0fjYo_AW0sdhNl6BxMUicp0Y',
                     'https://lh3.googleusercontent.com/d/15BsG8WcfvcnEPOhrdWyHGrq89Kd86O_Q',
                     'https://lh3.googleusercontent.com/d/109ZtLRE4rP9Z5EZFqy_8tIC-XLj8Escw',
@@ -474,7 +477,8 @@
                     'https://lh3.googleusercontent.com/d/1Et1L2lhFWH-PNlC-TWuWswwNFO9nAShE',
                     'https://lh3.googleusercontent.com/d/13BgOTRoCVkccZMuSHuSEX6sDWD6XDSUE',
                     'https://lh3.googleusercontent.com/d/1Qgs0zS1X4YH7iQxkAT8k9ycoi8ltaHzc',
-                    'https://lh3.googleusercontent.com/d/1JzjIwd26g3V1KK8n39oK5d9VCHMqEkoS'
+                    'https://lh3.googleusercontent.com/d/1JzjIwd26g3V1KK8n39oK5d9VCHMqEkoS',
+                    'https://lh3.googleusercontent.com/d/18PrXgOh3qSjSP-nWiPtbSyY1d7REYUQL'
                 ],
                 plantas: [
                     { title: 'Tipo 01 — 73m² (2 Dorms | 1 Suíte | 1 Vaga Livre)', img: './plantas/Altus/t1.PNG' },
@@ -1166,10 +1170,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="bg-white dark:bg-slate-900 p-2 rounded-xl border border-slate-200 dark:border-slate-800 inline-block">
+                        <a href="#" class="bg-white dark:bg-slate-900 p-2 rounded-xl border border-slate-200 dark:border-slate-800 inline-block hover:opacity-80 transition-opacity" title="Voltar ao início">
                             <img src="logo.png" alt="Chris Negócios Imobiliários" class="h-10 w-auto max-h-10 object-contain bg-transparent hidden dark:block">
                             <img src="logo2.png" alt="Chris Negócios Imobiliários" class="h-10 w-auto max-h-10 object-contain bg-transparent block dark:hidden">
-                        </div>
+                        </a>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
                         Chris, sua consultora imobiliária credenciada Tarjab. Especialista nos empreendimentos Altus, Criare, Eucalys, Riserva, Viccino, Vila Ares, Signatur, Isla e Origem.
